@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		90266CDF29759A3000549388 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90266CDE29759A3000549388 /* Theme.swift */; };
 		90C0DB612903E3C800613480 /* BabySleepDiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C0DB602903E3C800613480 /* BabySleepDiaryApp.swift */; };
 		90C0DB632903E3C800613480 /* SleepLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C0DB622903E3C800613480 /* SleepLogView.swift */; };
 		90C0DB652903E3CA00613480 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90C0DB642903E3CA00613480 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		90266CDE29759A3000549388 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Theme.swift; path = BabySleepDiary/Theme.swift; sourceTree = SOURCE_ROOT; };
 		90C0DB5D2903E3C800613480 /* BabySleepDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabySleepDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90C0DB602903E3C800613480 /* BabySleepDiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabySleepDiaryApp.swift; sourceTree = "<group>"; };
 		90C0DB622903E3C800613480 /* SleepLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepLogView.swift; sourceTree = "<group>"; };
@@ -33,6 +35,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		90266CDB29755E9D00549388 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				90266CDE29759A3000549388 /* Theme.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		90C0DB542903E3C800613480 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +64,7 @@
 			children = (
 				90C0DB602903E3C800613480 /* BabySleepDiaryApp.swift */,
 				90C0DB622903E3C800613480 /* SleepLogView.swift */,
+				90266CDB29755E9D00549388 /* Models */,
 				90C0DB642903E3CA00613480 /* Assets.xcassets */,
 				90C0DB662903E3CA00613480 /* BabySleepDiary.entitlements */,
 				90C0DB672903E3CA00613480 /* Preview Content */,
@@ -139,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90266CDF29759A3000549388 /* Theme.swift in Sources */,
 				90C0DB632903E3C800613480 /* SleepLogView.swift in Sources */,
 				90C0DB612903E3C800613480 /* BabySleepDiaryApp.swift in Sources */,
 			);
