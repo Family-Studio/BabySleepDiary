@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		90C0DB612903E3C800613480 /* BabySleepDiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C0DB602903E3C800613480 /* BabySleepDiaryApp.swift */; };
-		90C0DB632903E3C800613480 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C0DB622903E3C800613480 /* ContentView.swift */; };
+		90C0DB632903E3C800613480 /* SleepLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C0DB622903E3C800613480 /* SleepLogView.swift */; };
 		90C0DB652903E3CA00613480 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90C0DB642903E3CA00613480 /* Assets.xcassets */; };
 		90C0DB692903E3CA00613480 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90C0DB682903E3CA00613480 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -16,7 +16,7 @@
 /* Begin PBXFileReference section */
 		90C0DB5D2903E3C800613480 /* BabySleepDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabySleepDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90C0DB602903E3C800613480 /* BabySleepDiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabySleepDiaryApp.swift; sourceTree = "<group>"; };
-		90C0DB622903E3C800613480 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		90C0DB622903E3C800613480 /* SleepLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepLogView.swift; sourceTree = "<group>"; };
 		90C0DB642903E3CA00613480 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90C0DB662903E3CA00613480 /* BabySleepDiary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BabySleepDiary.entitlements; sourceTree = "<group>"; };
 		90C0DB682903E3CA00613480 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				90C0DB602903E3C800613480 /* BabySleepDiaryApp.swift */,
-				90C0DB622903E3C800613480 /* ContentView.swift */,
+				90C0DB622903E3C800613480 /* SleepLogView.swift */,
 				90C0DB642903E3CA00613480 /* Assets.xcassets */,
 				90C0DB662903E3CA00613480 /* BabySleepDiary.entitlements */,
 				90C0DB672903E3CA00613480 /* Preview Content */,
@@ -139,7 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90C0DB632903E3C800613480 /* ContentView.swift in Sources */,
+				90C0DB632903E3C800613480 /* SleepLogView.swift in Sources */,
 				90C0DB612903E3C800613480 /* BabySleepDiaryApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
