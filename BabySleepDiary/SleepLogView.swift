@@ -21,7 +21,11 @@ struct SleepLogView: View {
                 Button(action: {}) {
                     Label("", systemImage: "arrow.left")
                 }
+                Spacer()
                 DatePicker("", selection: $selectedDate, in: closedRange, displayedComponents: .date)
+                    .labelsHidden()
+                    .frame(alignment: .center)
+                Spacer()
                 Button(action: {}) {
                     Label("", systemImage: "arrow.right")
                 }
