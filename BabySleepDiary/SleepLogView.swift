@@ -30,6 +30,9 @@ struct SleepLogView: View {
                     Label("", systemImage: "arrow.right")
                 }
             }
+            Button(action: {}) {
+                Label("Start", systemImage: "play")
+            }
             Spacer()
             Button(action: {}) {
                 Label("Add", systemImage: "plus")
