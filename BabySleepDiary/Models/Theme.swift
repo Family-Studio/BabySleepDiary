@@ -19,8 +19,8 @@ enum Theme: String {
     
     var accentColor: Color {
         switch self {
-        case .bubblegum, .happy, .sky, .spring: return .white
-        case .navy, .pink, .tial, .white: return .black
+        case .navy, .pink, .tial: return .white
+        case .bubblegum, .happy, .sky, .spring, .white: return .black
         }
     }
     
