@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SleepCardView: View {
-    let sleep: SleepLog
+    let sleep: DailySleepLog
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -37,7 +37,7 @@ struct SleepCardView: View {
 }
 
 struct SleepCardView_Previews: PreviewProvider {
-    static var sleep = SleepLog.sleeps[0]
+    static var sleep = DailySleepLog.sleeps[0]
     static var previews: some View {
         SleepCardView(sleep: sleep)
             .background(sleep.theme.mainColor)

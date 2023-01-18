@@ -11,7 +11,7 @@ import SwiftUI
 struct BabySleepDiaryApp: App {
     var body: some Scene {
         WindowGroup {
-            SleepLogView()
+            DailySleepLogView(sleeps: DailySleepLog.sleeps)
         }
     }
 }

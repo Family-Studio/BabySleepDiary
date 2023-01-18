@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct SleepLogView: View {
+struct DailySleepLogView: View {
     
+    let sleeps: [DailySleepLog]
     @State var selectedDate = Date()
     var closedRange: ClosedRange<Date> {
         let currentDate = Calendar.current.date(byAdding: .day, value: 0, to: Date())!
@@ -33,6 +34,12 @@ struct SleepLogView: View {
             Button(action: {}) {
                 Label("Start", systemImage: "play")
             }
+            List {
+                ForEach(sleeps, id: \.isNithtSleep) { sleep in
+                    SleepCardView(sleep: sleep)
+                        .listRowBackground(sleep.theme.mainColor)
+                }
+            }
             Spacer()
             Button(action: {}) {
                 Label("Add", systemImage: "plus")
@@ -44,6 +51,6 @@ struct SleepLogView: View {
 
 struct SleepLogView_Previews: PreviewProvider {
     static var previews: some View {
-        SleepLogView()
+        DailySleepLogView(sleeps: DailySleepLog.sleeps)
     }
 }
