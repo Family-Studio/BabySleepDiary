@@ -38,6 +38,7 @@ struct DailySleepLogView: View {
                 ForEach(sleeps, id: \.isNithtSleep) { sleep in
                     SleepCardView(sleep: sleep)
                         .listRowBackground(sleep.theme.mainColor)
+                        .listRowSeparator(.hidden)
                 }
             }
             Spacer()
