@@ -13,9 +13,21 @@ struct SleepDetailView: View {
     var body: some View {
         List {
             Section(header: Label("\(sleep.dayOrNightSleep) sleep details", systemImage: sleep.dayOrNightIcon)) {
-                Label("\(sleep.startTime) (start time)", systemImage: "play")
-                Label("\(sleep.endTime) (end time)", systemImage: "stop")
-                Label("\(sleep.sleepDuration) (duration)", systemImage: "alarm")
+                HStack {
+                    Label("Start time", systemImage: "play")
+                    Spacer()
+                    Text("\(sleep.startTime)")
+                }
+                HStack {
+                    Label("End time", systemImage: "stop")
+                    Spacer()
+                    Text("\(sleep.endTime)")
+                }
+                HStack {
+                    Label("Duration", systemImage: "alarm")
+                    Spacer()
+                    Text("\(sleep.sleepDuration)")
+                }
             }
             Section(header: Label("Actions", systemImage: "slider.horizontal.3")) {
                 Label("Edit", systemImage: "slider.horizontal.2.gobackward")
