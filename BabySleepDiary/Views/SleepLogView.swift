@@ -16,7 +16,7 @@ struct SleepLogView: View {
             SleepHeaderView()
             List {
                 ForEach(sleeps) { sleep in
-                    NavigationLink(destination: Text(sleep.sleepDuration)) {
+                    NavigationLink(destination: SleepDetailView(sleep: sleep)) {
                         SleepCardView(sleep: sleep)
                     }
                     .listRowSeparator(.hidden)
