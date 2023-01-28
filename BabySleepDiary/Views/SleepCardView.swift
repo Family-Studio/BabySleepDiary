@@ -10,32 +10,44 @@ import SwiftUI
 struct SleepCardView: View {
     let sleep: DailySleepLog
     var body: some View {
-        VStack(alignment: .leading) {
-            HStack() {
+        VStack {
+            HStack(alignment: .center) {
                 Spacer()
                 Label("\(sleep.wakeTime)", systemImage: "clock.arrow.circlepath")
-                    .frame(alignment: .leading)
-                    .font(.callout).bold()
+                    .labelStyle(.titleAndIcon)
+                    .font(.footnote).bold()
             }
             Divider()
-            HStack(alignment: .center) {
-                VStack(alignment: .center) {
-                        Text(sleep.endTime)
+            HStack {
+                VStack {
+                    Text(sleep.endTime)
                     Spacer()
-                    Label("", systemImage: sleep.dayAndNightIcon)
-                        .labelsHidden()
-                        .font(.system(size: 30))
+                    HStack {
+                        Divider()
+                    }
+                    HStack{
+                        Spacer()
+                        Image(systemName: "\(sleep.dayAndNightIcon)")
+                            .resizable()
+                            .frame(width: 32.0, height: 32.0)
+                        Spacer()
+                    }
+                    .frame(width: 32.0, height: 32.0)
                     Spacer()
-                    Text(sleep.startTime)
+                    HStack {
+                        Divider()
+                    }
+                    Text(sleep.endTime)
                 }
                 VStack(alignment: .leading) {
+                    Spacer()
                     Text("\(sleep.isNithtSleep) sleep:")
-                    Text(sleep.sleepDuration)
-                        .font(.headline)
+                    Text(sleep.sleepDuration).bold()
+                    Spacer()
+                    }
+                    Spacer()
                 }
             }
-            Spacer()
-        }
         .padding()
         .foregroundColor(sleep.theme.accentColor)
     }
@@ -49,3 +61,37 @@ struct SleepCardView_Previews: PreviewProvider {
             .previewLayout(.fixed(width: 400, height: 150))
     }
 }
+
+//HStack() {
+//                Spacer()
+//                Label("\(sleep.wakeTime)", systemImage: "clock.arrow.circlepath")
+//                    .frame(alignment: .leading)
+//                    .font(.callout).bold()
+//            }
+//            Divider()
+//            HStack {
+//                VStack {
+//                    Spacer()
+//                    HStack{
+//                        Text(sleep.endTime)
+//                        Spacer()
+//                    }
+//                    Spacer()
+//                    HStack {
+//                        Label("", systemImage: sleep.dayAndNightIcon)
+//                            .font(.system(size: 34))
+//                        Spacer()
+//                        VStack(alignment: .leading) {
+//                            Text("\(sleep.isNithtSleep) sleep:")
+//                            Text(sleep.sleepDuration)
+//                                .font(.headline)
+//                        }
+//                    }
+//                    Spacer()
+//                    HStack {
+//                        Text(sleep.startTime)
+//                        Spacer()
+//                    }
+//                }
+//            }
+//            Spacer()
