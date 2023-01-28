@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SleepLogView: View {
     
-    let sleeps: [DailySleepLog]
+    let sleeps: [SleepLog]
 
     var body: some View {
         VStack() {
@@ -34,7 +34,7 @@ struct SleepLogView: View {
 struct SleepLogView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            SleepLogView(sleeps: DailySleepLog.sleeps)
+            SleepLogView(sleeps: SleepLog.sleeps)
         }
     }
 }

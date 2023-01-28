@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SleepDetailView: View {
-    let sleep: DailySleepLog
+    let sleep: SleepLog
     
     var body: some View {
         List {
@@ -29,7 +29,7 @@ struct SleepDetailView: View {
 struct SleepDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            SleepDetailView(sleep: DailySleepLog.sleeps[0])
+            SleepDetailView(sleep: SleepLog.sleeps[0])
         }
     }
 }

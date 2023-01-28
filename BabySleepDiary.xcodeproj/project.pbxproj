@@ -16,7 +16,7 @@
 		90C0DB692903E3CA00613480 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90C0DB682903E3CA00613480 /* Preview Assets.xcassets */; };
 		90C7D9292976E0D700A8955E /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7D9282976E0D700A8955E /* Theme.swift */; };
 		90C7D92C2976E12500A8955E /* SleepCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7D92B2976E12500A8955E /* SleepCardView.swift */; };
-		90ED9CFE2976DEBB00E37742 /* DailySleepLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ED9CFD2976DEBB00E37742 /* DailySleepLog.swift */; };
+		90ED9CFE2976DEBB00E37742 /* SleepLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ED9CFD2976DEBB00E37742 /* SleepLog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,7 @@
 		90C0DB682903E3CA00613480 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		90C7D9282976E0D700A8955E /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		90C7D92B2976E12500A8955E /* SleepCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepCardView.swift; sourceTree = "<group>"; usesTabs = 0; };
-		90ED9CFD2976DEBB00E37742 /* DailySleepLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySleepLog.swift; sourceTree = "<group>"; };
+		90ED9CFD2976DEBB00E37742 /* SleepLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepLog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				90C7D9282976E0D700A8955E /* Theme.swift */,
-				90ED9CFD2976DEBB00E37742 /* DailySleepLog.swift */,
+				90ED9CFD2976DEBB00E37742 /* SleepLog.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -173,7 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90ED9CFE2976DEBB00E37742 /* DailySleepLog.swift in Sources */,
+				90ED9CFE2976DEBB00E37742 /* SleepLog.swift in Sources */,
 				90C7D92C2976E12500A8955E /* SleepCardView.swift in Sources */,
 				90C7D9292976E0D700A8955E /* Theme.swift in Sources */,
 				90C0DB632903E3C800613480 /* SleepLogView.swift in Sources */,
