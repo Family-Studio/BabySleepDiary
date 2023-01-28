@@ -35,7 +35,7 @@ struct DailySleepLogView: View {
                 Label("Start", systemImage: "play")
             }
             List {
-                ForEach(sleeps, id: \.isNithtSleep) { sleep in
+                ForEach(sleeps) { sleep in
                     SleepCardView(sleep: sleep)
                         .listRowBackground(sleep.theme.mainColor)
                         .listRowSeparator(.hidden)

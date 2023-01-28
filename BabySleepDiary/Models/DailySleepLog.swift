@@ -8,27 +8,40 @@
 import Foundation
 
 
-struct DailySleepLog {
+struct DailySleepLog: Identifiable {
+    let id: UUID
     var startTime: String
     var endTime: String
-    var isNithtSleep: String
-    var dayAndNightIcon: String
+    var dayOrNightSleep: String
+    var dayOrNightIcon: String
     var theme: Theme
     var sleepDuration: String
-    var wakeTime: String
-    var wakefulnessurationIcon: String = "clock.arrow.circlepath"
+    var wakeDuration: String
+    var wakeDurationIcon: String = "clock.arrow.circlepath"
     
+    
+    init(id: UUID = UUID(), startTime: String, endTime: String, dayOrNightSleep: String, dayOrNightIcon: String, theme: Theme, sleepDuration: String, wakeDuration: String, wakeDurationIcon: String = "clock.arrow.circlepath") {
+        self.id = id
+        self.startTime = startTime
+        self.endTime = endTime
+        self.dayOrNightSleep = dayOrNightSleep
+        self.dayOrNightIcon = dayOrNightIcon
+        self.theme = theme
+        self.sleepDuration = sleepDuration
+        self.wakeDuration = wakeDuration
+        self.wakeDurationIcon = wakeDurationIcon
+    }
 }
 
 extension DailySleepLog {
     static let sleeps: [DailySleepLog] =
     [
-        DailySleepLog(startTime: "22:08", endTime: "08:00", isNithtSleep: "Night", dayAndNightIcon: "moon.stars.fill", theme: Theme.sky, sleepDuration: "9 hours 52 minutes", wakeTime: "5 hours 59 minutes"),
-        DailySleepLog(startTime: "13:59", endTime: "16:40", isNithtSleep: "Day", dayAndNightIcon: "sun.max.fill", theme: Theme.happy, sleepDuration: "5 hours 59 minutes", wakeTime: "5 hours 3 minutes"),
-        DailySleepLog(startTime: "13:59", endTime: "16:40", isNithtSleep: "Day", dayAndNightIcon: "sun.max.fill", theme: Theme.happy, sleepDuration: "5 hours 59 minutes", wakeTime: "5 hours 3 minutes"),
-        DailySleepLog(startTime: "13:59", endTime: "16:40", isNithtSleep: "Day", dayAndNightIcon: "sun.max.fill", theme: Theme.happy, sleepDuration: "5 hours 59 minutes", wakeTime: "5 hours 3 minutes"),
-        DailySleepLog(startTime: "13:59", endTime: "16:40", isNithtSleep: "Day", dayAndNightIcon: "sun.max.fill", theme: Theme.happy, sleepDuration: "5 hours 59 minutes", wakeTime: "5 hours 3 minutes"),
-        DailySleepLog(startTime: "13:59", endTime: "16:40", isNithtSleep: "Day", dayAndNightIcon: "sun.max.fill", theme: Theme.happy, sleepDuration: "5 hours 59 minutes", wakeTime: "5 hours 3 minutes"),
-        DailySleepLog(startTime: "13:59", endTime: "16:40", isNithtSleep: "Day", dayAndNightIcon: "sun.max.fill", theme: Theme.happy, sleepDuration: "5 hours 59 minutes", wakeTime: "5 hours 3 minutes")
+        DailySleepLog(startTime: "22:08", endTime: "08:00", dayOrNightSleep: "Night", dayOrNightIcon: "moon.stars.fill", theme: Theme.sky, sleepDuration: "9 hours 52 minutes", wakeDuration: "5 hours 59 minutes"),
+        DailySleepLog(startTime: "13:59", endTime: "16:40", dayOrNightSleep: "Day", dayOrNightIcon: "sun.max.fill", theme: Theme.happy, sleepDuration: "5 hours 59 minutes", wakeDuration: "5 hours 3 minutes"),
+        DailySleepLog(startTime: "13:59", endTime: "16:40", dayOrNightSleep: "Day", dayOrNightIcon: "sun.max.fill", theme: Theme.happy, sleepDuration: "5 hours 59 minutes", wakeDuration: "5 hours 3 minutes"),
+        DailySleepLog(startTime: "13:59", endTime: "16:40", dayOrNightSleep: "Day", dayOrNightIcon: "sun.max.fill", theme: Theme.happy, sleepDuration: "5 hours 59 minutes", wakeDuration: "5 hours 3 minutes"),
+        DailySleepLog(startTime: "13:59", endTime: "16:40", dayOrNightSleep: "Day", dayOrNightIcon: "sun.max.fill", theme: Theme.happy, sleepDuration: "5 hours 59 minutes", wakeDuration: "5 hours 3 minutes"),
+        DailySleepLog(startTime: "13:59", endTime: "16:40", dayOrNightSleep: "Day", dayOrNightIcon: "sun.max.fill", theme: Theme.happy, sleepDuration: "5 hours 59 minutes", wakeDuration: "5 hours 3 minutes"),
+        DailySleepLog(startTime: "13:59", endTime: "16:40", dayOrNightSleep: "Day", dayOrNightIcon: "sun.max.fill", theme: Theme.happy, sleepDuration: "5 hours 59 minutes", wakeDuration: "5 hours 3 minutes")
     ]
 }

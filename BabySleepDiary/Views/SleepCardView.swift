@@ -13,7 +13,7 @@ struct SleepCardView: View {
         VStack {
             HStack(alignment: .center) {
                 Spacer()
-                Label("\(sleep.wakeTime)", systemImage: "clock.arrow.circlepath")
+                Label("\(sleep.wakeDuration)", systemImage: "clock.arrow.circlepath")
                     .labelStyle(.titleAndIcon)
                     .font(.footnote).bold()
             }
@@ -27,7 +27,7 @@ struct SleepCardView: View {
                     }
                     HStack{
                         Spacer()
-                        Image(systemName: "\(sleep.dayAndNightIcon)")
+                        Image(systemName: "\(sleep.dayOrNightIcon)")
                             .resizable()
                             .frame(width: 32.0, height: 32.0)
                         Spacer()
@@ -41,7 +41,7 @@ struct SleepCardView: View {
                 }
                 VStack(alignment: .leading) {
                     Spacer()
-                    Text("\(sleep.isNithtSleep) sleep:")
+                    Text("\(sleep.dayOrNightSleep) sleep:")
                     Text(sleep.sleepDuration).bold()
                     Spacer()
                     }
