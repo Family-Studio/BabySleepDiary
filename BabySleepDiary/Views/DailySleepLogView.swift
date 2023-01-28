@@ -10,35 +10,17 @@ import SwiftUI
 struct DailySleepLogView: View {
     
     let sleeps: [DailySleepLog]
-    @State var selectedDate = Date()
-    var closedRange: ClosedRange<Date> {
-        let currentDate = Calendar.current.date(byAdding: .day, value: 0, to: Date())!
-        let monthAgo = Calendar.current.date(byAdding: .day, value: -30, to: Date())!
-        return monthAgo...currentDate
-    }
+
     var body: some View {
         VStack() {
-            HStack() {
-                Button(action: {}) {
-                    Label("", systemImage: "arrow.left")
-                }
-                Spacer()
-                DatePicker("", selection: $selectedDate, in: closedRange, displayedComponents: .date)
-                    .labelsHidden()
-                    .frame(alignment: .center)
-                Spacer()
-                Button(action: {}) {
-                    Label("", systemImage: "arrow.right")
-                }
-            }
-            Button(action: {}) {
-                Label("Start", systemImage: "play")
-            }
+            DailySleepHeaderView()
             List {
                 ForEach(sleeps) { sleep in
-                    SleepCardView(sleep: sleep)
-                        .listRowBackground(sleep.theme.mainColor)
-                        .listRowSeparator(.hidden)
+                    NavigationLink(destination: Text(sleep.sleepDuration)) {
+                        SleepCardView(sleep: sleep)
+                    }
+                    .listRowSeparator(.hidden)
+                    .listRowBackground(sleep.theme.mainColor)
                 }
             }
             Spacer()
@@ -52,6 +34,8 @@ struct DailySleepLogView: View {
 
 struct SleepLogView_Previews: PreviewProvider {
     static var previews: some View {
-        DailySleepLogView(sleeps: DailySleepLog.sleeps)
+        NavigationView {
+            DailySleepLogView(sleeps: DailySleepLog.sleeps)
+        }
     }
 }
