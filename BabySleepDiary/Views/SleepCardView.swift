@@ -48,7 +48,7 @@ struct SleepCardView: View {
                     Spacer()
                 }
             }
-        .padding()
+        .padding(2)
         .foregroundColor(sleep.theme.accentColor)
     }
 }
@@ -61,37 +61,3 @@ struct SleepCardView_Previews: PreviewProvider {
             .previewLayout(.fixed(width: 400, height: 150))
     }
 }
-
-//HStack() {
-//                Spacer()
-//                Label("\(sleep.wakeTime)", systemImage: "clock.arrow.circlepath")
-//                    .frame(alignment: .leading)
-//                    .font(.callout).bold()
-//            }
-//            Divider()
-//            HStack {
-//                VStack {
-//                    Spacer()
-//                    HStack{
-//                        Text(sleep.endTime)
-//                        Spacer()
-//                    }
-//                    Spacer()
-//                    HStack {
-//                        Label("", systemImage: sleep.dayAndNightIcon)
-//                            .font(.system(size: 34))
-//                        Spacer()
-//                        VStack(alignment: .leading) {
-//                            Text("\(sleep.isNithtSleep) sleep:")
-//                            Text(sleep.sleepDuration)
-//                                .font(.headline)
-//                        }
-//                    }
-//                    Spacer()
-//                    HStack {
-//                        Text(sleep.startTime)
-//                        Spacer()
-//                    }
-//                }
-//            }
-//            Spacer()

@@ -20,6 +20,7 @@ struct DailySleepHeaderView: View {
                 Button(action: {}) {
                     Label("", systemImage: "arrow.left")
                 }
+                .padding(16.0)
                 Spacer()
                 DatePicker("", selection: $selectedDate, in: closedRange, displayedComponents: .date)
                     .labelsHidden()
@@ -28,11 +29,10 @@ struct DailySleepHeaderView: View {
                 Button(action: {}) {
                     Label("", systemImage: "arrow.right")
                 }
-            }
-            Button(action: {}) {
-                Label("Start", systemImage: "play")
+                .padding(16.0)
             }
         }
+        .padding(0)
     }
 }
 

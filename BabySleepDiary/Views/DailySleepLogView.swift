@@ -23,12 +23,13 @@ struct DailySleepLogView: View {
                     .listRowBackground(sleep.theme.mainColor)
                 }
             }
+            .background(.white)
+            .scrollContentBackground(.hidden)
             Spacer()
-            Button(action: {}) {
-                Label("Add", systemImage: "plus")
+            ZStack {
+                DailySleepFooterView()
             }
         }
-        .padding()
     }
 }
 
