@@ -26,9 +26,7 @@ struct DailySleepLogView: View {
             .background(.white)
             .scrollContentBackground(.hidden)
             Spacer()
-            ZStack {
                 DailySleepFooterView()
-            }
         }
     }
 }
