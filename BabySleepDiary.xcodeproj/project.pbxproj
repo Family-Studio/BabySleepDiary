@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		90C0AAA629856AC40051E680 /* DailySleepHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C0AAA529856AC40051E680 /* DailySleepHeaderView.swift */; };
-		90C0AAA829856D130051E680 /* DailySleepFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C0AAA729856D130051E680 /* DailySleepFooterView.swift */; };
+		90C0AAA629856AC40051E680 /* SleepHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C0AAA529856AC40051E680 /* SleepHeaderView.swift */; };
+		90C0AAA829856D130051E680 /* SleepFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C0AAA729856D130051E680 /* SleepFooterView.swift */; };
 		90C0DB612903E3C800613480 /* BabySleepDiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C0DB602903E3C800613480 /* BabySleepDiaryApp.swift */; };
-		90C0DB632903E3C800613480 /* DailySleepLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C0DB622903E3C800613480 /* DailySleepLogView.swift */; };
+		90C0DB632903E3C800613480 /* SleepLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C0DB622903E3C800613480 /* SleepLogView.swift */; };
 		90C0DB652903E3CA00613480 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90C0DB642903E3CA00613480 /* Assets.xcassets */; };
 		90C0DB692903E3CA00613480 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90C0DB682903E3CA00613480 /* Preview Assets.xcassets */; };
 		90C7D9292976E0D700A8955E /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7D9282976E0D700A8955E /* Theme.swift */; };
@@ -19,11 +19,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		90C0AAA529856AC40051E680 /* DailySleepHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySleepHeaderView.swift; sourceTree = "<group>"; };
-		90C0AAA729856D130051E680 /* DailySleepFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySleepFooterView.swift; sourceTree = "<group>"; };
+		90C0AAA529856AC40051E680 /* SleepHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepHeaderView.swift; sourceTree = "<group>"; };
+		90C0AAA729856D130051E680 /* SleepFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepFooterView.swift; sourceTree = "<group>"; };
 		90C0DB5D2903E3C800613480 /* BabySleepDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabySleepDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90C0DB602903E3C800613480 /* BabySleepDiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabySleepDiaryApp.swift; sourceTree = "<group>"; };
-		90C0DB622903E3C800613480 /* DailySleepLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySleepLogView.swift; sourceTree = "<group>"; };
+		90C0DB622903E3C800613480 /* SleepLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepLogView.swift; sourceTree = "<group>"; };
 		90C0DB642903E3CA00613480 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90C0DB662903E3CA00613480 /* BabySleepDiary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BabySleepDiary.entitlements; sourceTree = "<group>"; };
 		90C0DB682903E3CA00613480 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -83,10 +83,10 @@
 		90C7D92A2976E0F600A8955E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				90C0DB622903E3C800613480 /* DailySleepLogView.swift */,
+				90C0DB622903E3C800613480 /* SleepLogView.swift */,
 				90C7D92B2976E12500A8955E /* SleepCardView.swift */,
-				90C0AAA529856AC40051E680 /* DailySleepHeaderView.swift */,
-				90C0AAA729856D130051E680 /* DailySleepFooterView.swift */,
+				90C0AAA529856AC40051E680 /* SleepHeaderView.swift */,
+				90C0AAA729856D130051E680 /* SleepFooterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,10 +173,10 @@
 				90ED9CFE2976DEBB00E37742 /* DailySleepLog.swift in Sources */,
 				90C7D92C2976E12500A8955E /* SleepCardView.swift in Sources */,
 				90C7D9292976E0D700A8955E /* Theme.swift in Sources */,
-				90C0DB632903E3C800613480 /* DailySleepLogView.swift in Sources */,
+				90C0DB632903E3C800613480 /* SleepLogView.swift in Sources */,
 				90C0DB612903E3C800613480 /* BabySleepDiaryApp.swift in Sources */,
-				90C0AAA829856D130051E680 /* DailySleepFooterView.swift in Sources */,
-				90C0AAA629856AC40051E680 /* DailySleepHeaderView.swift in Sources */,
+				90C0AAA829856D130051E680 /* SleepFooterView.swift in Sources */,
+				90C0AAA629856AC40051E680 /* SleepHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

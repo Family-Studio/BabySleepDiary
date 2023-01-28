@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DailySleepHeaderView: View {
+struct SleepHeaderView: View {
     @State var selectedDate = Date()
     var closedRange: ClosedRange<Date> {
         let currentDate = Calendar.current.date(byAdding: .day, value: 0, to: Date())!
@@ -38,6 +38,6 @@ struct DailySleepHeaderView: View {
 
 struct DailySleepHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        DailySleepHeaderView()
+        SleepHeaderView()
     }
 }

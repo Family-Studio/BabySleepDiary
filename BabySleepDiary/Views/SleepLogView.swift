@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct DailySleepLogView: View {
+struct SleepLogView: View {
     
     let sleeps: [DailySleepLog]
 
     var body: some View {
         VStack() {
-            DailySleepHeaderView()
+            SleepHeaderView()
             List {
                 ForEach(sleeps) { sleep in
                     NavigationLink(destination: Text(sleep.sleepDuration)) {
@@ -26,7 +26,7 @@ struct DailySleepLogView: View {
             .background(.white)
             .scrollContentBackground(.hidden)
             Spacer()
-                DailySleepFooterView()
+                SleepFooterView()
         }
     }
 }
@@ -34,7 +34,7 @@ struct DailySleepLogView: View {
 struct SleepLogView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            DailySleepLogView(sleeps: DailySleepLog.sleeps)
+            SleepLogView(sleeps: DailySleepLog.sleeps)
         }
     }
 }

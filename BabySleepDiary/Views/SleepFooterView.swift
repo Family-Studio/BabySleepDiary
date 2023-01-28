@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DailySleepFooterView: View {
+struct SleepFooterView: View {
     var body: some View {
         HStack {
             Button(action: {}) {
@@ -26,6 +26,6 @@ struct DailySleepFooterView: View {
 
 struct DailySleepFooterView_Previews: PreviewProvider {
     static var previews: some View {
-        DailySleepFooterView()
+        SleepFooterView()
     }
 }
