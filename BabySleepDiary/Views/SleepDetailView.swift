@@ -30,9 +30,14 @@ struct SleepDetailView: View {
                 }
             }
             Section(header: Label("Actions", systemImage: "slider.horizontal.3")) {
-                Label("Edit", systemImage: "slider.horizontal.2.gobackward")
+                NavigationLink(destination: SleepEditView()) {
+                    Label("Edit", systemImage: "slider.horizontal.2.gobackward")
+                        .foregroundColor(.accentColor)
+                        .font(.headline)
+                }
                 Label("Detete", systemImage: "trash")
                     .foregroundColor(.red)
+                    .font(.headline)
             }
         }
     }
