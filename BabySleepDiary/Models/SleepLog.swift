@@ -34,6 +34,17 @@ struct SleepLog: Identifiable {
 }
 
 extension SleepLog {
+    
+    struct Data {
+        var startTime: String = ""
+        var endTime: String = ""
+        var dayOrNightSleep: String = ""
+    }
+    
+    var data: Data {
+        Data(startTime: startTime, endTime: endTime, dayOrNightSleep: dayOrNightSleep)
+    }
+    
     static let sleeps: [SleepLog] =
     [
         SleepLog(startTime: "22:08", endTime: "08:00", dayOrNightSleep: "Night", dayOrNightIcon: "moon.stars.fill", theme: Theme.sky, sleepDuration: "9 hours 52 minutes", wakeDuration: "5 hours 59 minutes"),
