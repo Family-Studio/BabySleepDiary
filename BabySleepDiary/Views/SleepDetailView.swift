@@ -44,7 +44,21 @@ struct SleepDetailView: View {
             }
         }
         .sheet(isPresented: $isPresentingEditView) {
-            SleepEditView()
+            NavigationView {
+                SleepEditView()
+                    .toolbar {
+                        ToolbarItem(placement: .cancellationAction) {
+                            Button ("Cancel") {
+                                isPresentingEditView = false
+                            }
+                        }
+                        ToolbarItem(placement: .confirmationAction) {
+                            Button("Done") {
+                                isPresentingEditView = true
+                            }
+                        }
+                    }
+            }
         }
     }
 }
