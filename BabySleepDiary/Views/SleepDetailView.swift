@@ -10,6 +10,8 @@ import SwiftUI
 struct SleepDetailView: View {
     let sleep: SleepLog
     
+    @State private var isPresentingEditView = false
+    
     var body: some View {
         List {
             Section(header: Label("\(sleep.dayOrNightSleep) sleep details", systemImage: sleep.dayOrNightIcon)) {
@@ -30,14 +32,32 @@ struct SleepDetailView: View {
                 }
             }
             Section(header: Label("Actions", systemImage: "slider.horizontal.3")) {
-                NavigationLink(destination: SleepEditView()) {
-                    Label("Edit", systemImage: "slider.horizontal.2.gobackward")
+                Label("Edit", systemImage: "slider.horizontal.2.gobackward")
                         .foregroundColor(.accentColor)
                         .font(.headline)
-                }
+                        .onTapGesture {
+                            isPresentingEditView = true
+                        }
                 Label("Detete", systemImage: "trash")
                     .foregroundColor(.red)
                     .font(.headline)
+            }
+        }
+        .sheet(isPresented: $isPresentingEditView) {
+            NavigationView {
+                SleepEditView()
+                    .toolbar {
+                        ToolbarItem(placement: .cancellationAction) {
+                            Button ("Cancel") {
+                                isPresentingEditView = false
+                            }
+                        }
+                        ToolbarItem(placement: .confirmationAction) {
+                            Button("Done") {
+                                isPresentingEditView = true
+                            }
+                        }
+                    }
             }
         }
     }

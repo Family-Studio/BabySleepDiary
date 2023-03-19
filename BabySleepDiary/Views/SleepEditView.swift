@@ -8,8 +8,16 @@
 import SwiftUI
 
 struct SleepEditView: View {
+    @State private var data = SleepLog.Data()
+    
     var body: some View {
-        Text("SleepEditView")
+        Form {
+            Section(header: Text("Edit sleep")) {
+                TextField("Start time", text: $data.startTime)
+                TextField("End time", text: $data.endTime)
+                TextField("Night or day sleep", text: $data.dayOrNightSleep)
+            }
+        }
     }
 }
 
