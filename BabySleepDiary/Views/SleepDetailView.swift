@@ -11,6 +11,7 @@ struct SleepDetailView: View {
     let sleep: SleepLog
     
     @State private var isPresentingEditView = false
+    @State private var data = SleepLog.Data()
     
     var body: some View {
         List {
@@ -41,6 +42,9 @@ struct SleepDetailView: View {
                 Label("Detete", systemImage: "trash")
                     .foregroundColor(.red)
                     .font(.headline)
+            }
+            Section(header: Label("Settings", systemImage: "slider.horizontal.2.square.on.square")) {
+                ThemePickerView(selection: $data.theme)
             }
         }
         .sheet(isPresented: $isPresentingEditView) {

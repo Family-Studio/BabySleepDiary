@@ -39,10 +39,11 @@ extension SleepLog {
         var startTime: String = ""
         var endTime: String = ""
         var dayOrNightSleep: String = ""
+        var theme: Theme = .navy
     }
     
     var data: Data {
-        Data(startTime: startTime, endTime: endTime, dayOrNightSleep: dayOrNightSleep)
+        Data(startTime: startTime, endTime: endTime, dayOrNightSleep: dayOrNightSleep, theme: theme)
     }
     
     static let sleeps: [SleepLog] =
