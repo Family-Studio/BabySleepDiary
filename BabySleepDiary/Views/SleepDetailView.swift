@@ -8,10 +8,8 @@
 import SwiftUI
 
 struct SleepDetailView: View {
-    let sleep: SleepLog
-    
+    @Binding var sleep: SleepLog
     @State private var isPresentingEditView = false
-    @State private var data = SleepLog.Data()
     
     var body: some View {
         List {
@@ -44,7 +42,7 @@ struct SleepDetailView: View {
                     .font(.headline)
             }
             Section(header: Label("Settings", systemImage: "slider.horizontal.2.square.on.square")) {
-                ThemePickerView(selection: $data.theme)
+                ThemeView(theme: .navy)
             }
         }
         .sheet(isPresented: $isPresentingEditView) {
@@ -70,7 +68,7 @@ struct SleepDetailView: View {
 struct SleepDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            SleepDetailView(sleep: SleepLog.sleeps[0])
+            SleepDetailView(sleep: .constant(.sleeps[0]))
         }
     }
 }

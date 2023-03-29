@@ -12,7 +12,7 @@ struct BabySleepDiaryApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                SleepLogView(sleeps: SleepLog.sleeps)
+                SleepLogView(sleeps: .constant(SleepLog.sleeps))
             }
         }
     }
