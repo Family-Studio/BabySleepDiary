@@ -30,6 +30,13 @@ struct SleepDetailView: View {
                     Text("\(sleep.sleepDuration)")
                 }
             }
+            Section(header: Label("Settings", systemImage: "slider.horizontal.2.square.on.square")) {
+                HStack {
+                    Label("Theme", systemImage: "theatermask.and.paintbrush")
+                    Spacer()
+                    ThemeView(theme: .navy)
+                }
+            }
             Section(header: Label("Actions", systemImage: "slider.horizontal.3")) {
                 Label("Edit", systemImage: "slider.horizontal.2.gobackward")
                         .foregroundColor(.accentColor)
@@ -40,13 +47,6 @@ struct SleepDetailView: View {
                 Label("Detete", systemImage: "trash")
                     .foregroundColor(.red)
                     .font(.headline)
-            }
-            Section(header: Label("Settings", systemImage: "slider.horizontal.2.square.on.square")) {
-                HStack {
-                    Label("Theme", systemImage: "theatermask.and.paintbrush")
-                    Spacer()
-                    ThemeView(theme: .navy)
-                }
             }
         }
         .sheet(isPresented: $isPresentingEditView) {
