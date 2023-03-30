@@ -42,7 +42,11 @@ struct SleepDetailView: View {
                     .font(.headline)
             }
             Section(header: Label("Settings", systemImage: "slider.horizontal.2.square.on.square")) {
-                ThemeView(theme: .navy)
+                HStack {
+                    Label("Theme", systemImage: "theatermask.and.paintbrush")
+                    Spacer()
+                    ThemeView(theme: .navy)
+                }
             }
         }
         .sheet(isPresented: $isPresentingEditView) {
