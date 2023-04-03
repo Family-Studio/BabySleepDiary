@@ -16,6 +16,7 @@ struct SleepEditView: View {
                 TextField("Start time", text: $data.startTime)
                 TextField("End time", text: $data.endTime)
                 TextField("Night or day sleep", text: $data.dayOrNightSleep)
+                ThemePickerView(selection: $data.theme)
             }
         }
     }
