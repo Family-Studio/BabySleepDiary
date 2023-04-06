@@ -63,7 +63,7 @@ struct SleepDetailView: View {
                         }
                         ToolbarItem(placement: .confirmationAction) {
                             Button("Done") {
-                                isPresentingEditView = true
+                                isPresentingEditView = false
                                 sleep.update(from: data)
                             }
                         }
