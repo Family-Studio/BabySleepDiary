@@ -45,6 +45,13 @@ extension SleepLog {
     var data: Data {
         Data(startTime: startTime, endTime: endTime, dayOrNightSleep: dayOrNightSleep, theme: theme)
     }
+    
+    mutating func update(from data: Data) {
+        startTime = data.startTime
+        endTime = data.endTime
+        dayOrNightSleep = data.dayOrNightSleep
+        theme = data.theme
+    }
 }
 
 extension SleepLog {

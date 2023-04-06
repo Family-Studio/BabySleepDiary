@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SleepDetailView: View {
     @Binding var sleep: SleepLog
+    
+    @State private var data = SleepLog.Data()
     @State private var isPresentingEditView = false
     
     var body: some View {
@@ -43,6 +45,7 @@ struct SleepDetailView: View {
                         .font(.headline)
                         .onTapGesture {
                             isPresentingEditView = true
+                            data = sleep.data
                         }
                 Label("Detete", systemImage: "trash")
                     .foregroundColor(.red)
@@ -51,7 +54,7 @@ struct SleepDetailView: View {
         }
         .sheet(isPresented: $isPresentingEditView) {
             NavigationView {
-                SleepEditView()
+                SleepEditView(data: $data)
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
                             Button ("Cancel") {
@@ -61,6 +64,7 @@ struct SleepDetailView: View {
                         ToolbarItem(placement: .confirmationAction) {
                             Button("Done") {
                                 isPresentingEditView = true
+                                sleep.update(from: data)
                             }
                         }
                     }
@@ -72,7 +76,7 @@ struct SleepDetailView: View {
 struct SleepDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            SleepDetailView(sleep: .constant(.sleeps[0]))
+            SleepDetailView(sleep: .constant(SleepLog.sleeps[0]))
         }
     }
 }
