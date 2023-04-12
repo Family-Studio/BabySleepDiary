@@ -36,7 +36,7 @@ struct SleepDetailView: View {
                 HStack {
                     Label("Theme", systemImage: "theatermask.and.paintbrush")
                     Spacer()
-                    ThemeView(theme: .navy)
+                    ThemeView(theme: sleep.theme)
                 }
             }
             Section(header: Label("Actions", systemImage: "slider.horizontal.3")) {
