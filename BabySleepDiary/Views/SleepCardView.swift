@@ -37,7 +37,7 @@ struct SleepCardView: View {
                     HStack {
                         Divider()
                     }
-                    Text(sleep.endTime)
+                    Text(sleep.startTime)
                 }
                 VStack(alignment: .leading) {
                     Spacer()
