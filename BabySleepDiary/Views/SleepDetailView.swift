@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct SleepDetailView: View {
-    let sleep: SleepLog
+    @Binding var sleep: SleepLog
     
+    @State private var data = SleepLog.Data()
     @State private var isPresentingEditView = false
     
     var body: some View {
@@ -31,12 +32,20 @@ struct SleepDetailView: View {
                     Text("\(sleep.sleepDuration)")
                 }
             }
+            Section(header: Label("Settings", systemImage: "slider.horizontal.2.square.on.square")) {
+                HStack {
+                    Label("Theme", systemImage: "theatermask.and.paintbrush")
+                    Spacer()
+                    ThemeView(theme: .navy)
+                }
+            }
             Section(header: Label("Actions", systemImage: "slider.horizontal.3")) {
                 Label("Edit", systemImage: "slider.horizontal.2.gobackward")
                         .foregroundColor(.accentColor)
                         .font(.headline)
                         .onTapGesture {
                             isPresentingEditView = true
+                            data = sleep.data
                         }
                 Label("Detete", systemImage: "trash")
                     .foregroundColor(.red)
@@ -45,7 +54,7 @@ struct SleepDetailView: View {
         }
         .sheet(isPresented: $isPresentingEditView) {
             NavigationView {
-                SleepEditView()
+                SleepEditView(data: $data)
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
                             Button ("Cancel") {
@@ -54,7 +63,8 @@ struct SleepDetailView: View {
                         }
                         ToolbarItem(placement: .confirmationAction) {
                             Button("Done") {
-                                isPresentingEditView = true
+                                isPresentingEditView = false
+                                sleep.update(from: data)
                             }
                         }
                     }
@@ -66,7 +76,7 @@ struct SleepDetailView: View {
 struct SleepDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            SleepDetailView(sleep: SleepLog.sleeps[0])
+            SleepDetailView(sleep: .constant(SleepLog.sleeps[0]))
         }
     }
 }

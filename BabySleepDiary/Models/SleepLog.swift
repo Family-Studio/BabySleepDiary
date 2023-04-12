@@ -39,12 +39,22 @@ extension SleepLog {
         var startTime: String = ""
         var endTime: String = ""
         var dayOrNightSleep: String = ""
+        var theme: Theme = .navy
     }
     
     var data: Data {
-        Data(startTime: startTime, endTime: endTime, dayOrNightSleep: dayOrNightSleep)
+        Data(startTime: startTime, endTime: endTime, dayOrNightSleep: dayOrNightSleep, theme: theme)
     }
     
+    mutating func update(from data: Data) {
+        startTime = data.startTime
+        endTime = data.endTime
+        dayOrNightSleep = data.dayOrNightSleep
+        theme = data.theme
+    }
+}
+
+extension SleepLog {
     static let sleeps: [SleepLog] =
     [
         SleepLog(startTime: "22:08", endTime: "08:00", dayOrNightSleep: "Night", dayOrNightIcon: "moon.stars.fill", theme: Theme.sky, sleepDuration: "9 hours 52 minutes", wakeDuration: "5 hours 59 minutes"),

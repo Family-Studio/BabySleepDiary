@@ -9,14 +9,14 @@ import SwiftUI
 
 struct SleepLogView: View {
     
-    let sleeps: [SleepLog]
+    @Binding var sleeps: [SleepLog]
 
     var body: some View {
         VStack() {
             SleepHeaderView()
             List {
-                ForEach(sleeps) { sleep in
-                    NavigationLink(destination: SleepDetailView(sleep: sleep)) {
+                ForEach($sleeps) { $sleep in
+                    NavigationLink(destination: SleepDetailView(sleep: $sleep)) {
                         SleepCardView(sleep: sleep)
                     }
                     .listRowSeparator(.hidden)
@@ -34,7 +34,7 @@ struct SleepLogView: View {
 struct SleepLogView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            SleepLogView(sleeps: SleepLog.sleeps)
+            SleepLogView(sleeps: .constant(SleepLog.sleeps))
         }
     }
 }

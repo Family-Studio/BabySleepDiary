@@ -9,10 +9,11 @@ import SwiftUI
 
 @main
 struct BabySleepDiaryApp: App {
+    @State private var sleeps = SleepLog.sleeps
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                SleepLogView(sleeps: SleepLog.sleeps)
+                SleepLogView(sleeps: $sleeps)
             }
         }
     }

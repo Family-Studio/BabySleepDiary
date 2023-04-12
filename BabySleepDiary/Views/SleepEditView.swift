@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SleepEditView: View {
-    @State private var data = SleepLog.Data()
+    @Binding var data: SleepLog.Data
     
     var body: some View {
         Form {
@@ -16,6 +16,7 @@ struct SleepEditView: View {
                 TextField("Start time", text: $data.startTime)
                 TextField("End time", text: $data.endTime)
                 TextField("Night or day sleep", text: $data.dayOrNightSleep)
+                ThemePickerView(selection: $data.theme)
             }
         }
     }
@@ -23,6 +24,6 @@ struct SleepEditView: View {
 
 struct SleepEditView_Previews: PreviewProvider {
     static var previews: some View {
-        SleepEditView()
+        SleepEditView(data: .constant(SleepLog.sleeps[0].data))
     }
 }
