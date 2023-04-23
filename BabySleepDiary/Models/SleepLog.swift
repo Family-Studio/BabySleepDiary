@@ -71,5 +71,5 @@ extension SleepLog {
 }
 
 extension SleepLog {
-    static var emptySleep = SleepLog(startTime: "", endTime: "", dayOrNightSleep: "", dayOrNightIcon: "", theme: Theme.bubblegum, sleepDuration: "", wakeDuration: "")
+    static var emptySleep = SleepLog(startTime: "00:00", endTime: "00:00", dayOrNightSleep: "N/a", dayOrNightIcon: "questionmark.diamond", theme: Theme.bubblegum, sleepDuration: "0 hours 0 minutes", wakeDuration: "0 hours 0 minutes")
 }
