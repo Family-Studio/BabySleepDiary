@@ -38,12 +38,15 @@ extension SleepLog {
     struct Data {
         var startTime: String = ""
         var endTime: String = ""
-        var dayOrNightSleep: String = ""
+        var sleepDuration: String = "n/a"
+        var dayOrNightSleep: String = "Day or Night"
+        var wakeDuration: String = "n/a"
+        var dayOrNightIcon: String = "questionmark.diamond"
         var theme: Theme = .navy
     }
     
     var data: Data {
-        Data(startTime: startTime, endTime: endTime, dayOrNightSleep: dayOrNightSleep, theme: theme)
+        Data(startTime: startTime, endTime: endTime, sleepDuration: sleepDuration, dayOrNightSleep: dayOrNightSleep, wakeDuration: wakeDuration, dayOrNightIcon: dayOrNightIcon, theme: theme)
     }
     
     mutating func update(from data: Data) {
@@ -65,4 +68,8 @@ extension SleepLog {
         SleepLog(startTime: "13:59", endTime: "16:40", dayOrNightSleep: "Day", dayOrNightIcon: "sun.max.fill", theme: Theme.happy, sleepDuration: "5 hours 59 minutes", wakeDuration: "5 hours 3 minutes"),
         SleepLog(startTime: "13:59", endTime: "16:40", dayOrNightSleep: "Day", dayOrNightIcon: "sun.max.fill", theme: Theme.happy, sleepDuration: "5 hours 59 minutes", wakeDuration: "5 hours 3 minutes")
     ]
+}
+
+extension SleepLog {
+    static var emptySleep = SleepLog(startTime: "", endTime: "", dayOrNightSleep: "", dayOrNightIcon: "", theme: Theme.bubblegum, sleepDuration: "", wakeDuration: "")
 }

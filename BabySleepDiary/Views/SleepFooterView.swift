@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct SleepFooterView: View {
+    @State private var isPresentingNewSleepView = false
+    @Binding var sleeps: [SleepLog]
+    
     var body: some View {
         HStack {
-            Button(action: {}) {
+            Button(action: {isPresentingNewSleepView = true}) {
                 Label("Add", systemImage: "plus")
             }
             .padding(24.0)
@@ -21,11 +24,14 @@ struct SleepFooterView: View {
             .padding(24.0)
         }
         .padding(0)
+        .sheet(isPresented: $isPresentingNewSleepView) {
+            NewSleepSheet(isPresentingNewSleepView: $isPresentingNewSleepView, sleeps: $sleeps)
+        }
     }
 }
 
 struct DailySleepFooterView_Previews: PreviewProvider {
     static var previews: some View {
-        SleepFooterView()
+        SleepFooterView(sleeps: .constant(SleepLog.sleeps))
     }
 }

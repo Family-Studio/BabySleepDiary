@@ -26,7 +26,7 @@ struct SleepLogView: View {
             .background(.white)
             .scrollContentBackground(.hidden)
             Spacer()
-                SleepFooterView()
+            SleepFooterView(sleeps: $sleeps)
         }
     }
 }
