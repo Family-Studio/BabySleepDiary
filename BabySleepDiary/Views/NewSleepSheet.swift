@@ -14,7 +14,7 @@ struct NewSleepSheet: View {
     
     var body: some View {
         NavigationStack {
-            SleepEditView(data: $newSleep)
+            SleepEditView(sleep: $newSleep)
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
                         Button("Dismiss") {
