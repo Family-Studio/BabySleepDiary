@@ -54,7 +54,7 @@ struct SleepDetailView: View {
         }
         .sheet(isPresented: $isPresentingEditView) {
             NavigationView {
-                SleepEditView(sleep: .constant(sleep))
+                SleepEditView(sleep: $sleep)
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
                             Button ("Cancel") {
