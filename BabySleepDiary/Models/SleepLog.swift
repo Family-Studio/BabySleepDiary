@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct SleepLog: Identifiable {
+struct SleepLog: Identifiable, Codable {
     let id: UUID
     var startTime: String
     var endTime: String
