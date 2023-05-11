@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct BabySleepDiaryApp: App {
-    @State private var sleeps = SleepLog.sleeps
+    @State private var sleeps = DailySleep.sleeps
     var body: some Scene {
         WindowGroup {
             NavigationView {

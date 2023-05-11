@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct SleepDetailView: View {
-    @Binding var sleep: SleepLog
+    @Binding var sleep: DailySleep
     
-    @State private var editingSleep = SleepLog.emptySleep
+    @State private var editingSleep = DailySleep.emptySleep
     @State private var isPresentingEditView = false
     
     var body: some View {
@@ -76,7 +76,7 @@ struct SleepDetailView: View {
 struct SleepDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            SleepDetailView(sleep: .constant(SleepLog.sleeps[0]))
+            SleepDetailView(sleep: .constant(DailySleep.sleeps[0]))
         }
     }
 }

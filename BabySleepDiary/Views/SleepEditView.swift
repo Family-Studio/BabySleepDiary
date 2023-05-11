@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SleepEditView: View {
-    @Binding var sleep: SleepLog
+    @Binding var sleep: DailySleep
     
     var body: some View {
         Form {
@@ -24,6 +24,6 @@ struct SleepEditView: View {
 
 struct SleepEditView_Previews: PreviewProvider {
     static var previews: some View {
-        SleepEditView(sleep: .constant(SleepLog.sleeps[0]))
+        SleepEditView(sleep: .constant(DailySleep.sleeps[0]))
     }
 }

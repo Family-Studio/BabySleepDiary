@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct NewSleepSheet: View {
-    @State private var newSleep = SleepLog.emptySleep
+    @State private var newSleep = DailySleep.emptySleep
     @Binding var isPresentingNewSleepView: Bool
-    @Binding var sleeps: [SleepLog]
+    @Binding var sleeps: [DailySleep]
     
     var body: some View {
         NavigationStack {
@@ -34,6 +34,6 @@ struct NewSleepSheet: View {
 
 struct NewSleepSheet_Previews: PreviewProvider {
     static var previews: some View {
-        NewSleepSheet(isPresentingNewSleepView: .constant(true), sleeps: .constant(SleepLog.sleeps))
+        NewSleepSheet(isPresentingNewSleepView: .constant(true), sleeps: .constant(DailySleep.sleeps))
     }
 }
