@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@MainActor
 class SleepStore: ObservableObject {
     @Published var sleeps: [DailySleep] = []
     
@@ -15,4 +16,16 @@ class SleepStore: ObservableObject {
             .appendingPathComponent("sleeps.data")
     }
     
+    func load() async throws {
+        let task = Task<[DailySleep], Error> {
+            let fileURL = try Self.fileURL()
+            guard let data = try? Data(contentsOf: fileURL) else {
+                return []
+            }
+            let dailySleeps = try JSONDecoder().decode([DailySleep].self, from: data)
+            return dailySleeps
+        }
+        let sleeps = try await task.value
+        self.sleeps = sleeps
+    }
 }
