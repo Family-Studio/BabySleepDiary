@@ -28,4 +28,13 @@ class SleepStore: ObservableObject {
         let sleeps = try await task.value
         self.sleeps = sleeps
     }
+    
+    func save(sleeps: [DailySleep]) async throws {
+        let task = Task {
+            let data = try JSONEncoder().encode(sleeps)
+            let outfile = try Self.fileURL()
+            try data.write(to: outfile)
+        }
+        _ = try await task.value
+    }
 }
