@@ -16,7 +16,7 @@
 		90C0AAAA29857F010051E680 /* SleepDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C0AAA929857F010051E680 /* SleepDetailView.swift */; };
 		90C0AAAC29882D9E0051E680 /* SleepEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C0AAAB29882D9E0051E680 /* SleepEditView.swift */; };
 		90C0DB612903E3C800613480 /* BabySleepDiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C0DB602903E3C800613480 /* BabySleepDiaryApp.swift */; };
-		90C0DB632903E3C800613480 /* SleepLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C0DB622903E3C800613480 /* SleepLogView.swift */; };
+		90C0DB632903E3C800613480 /* SleepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C0DB622903E3C800613480 /* SleepsView.swift */; };
 		90C0DB652903E3CA00613480 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90C0DB642903E3CA00613480 /* Assets.xcassets */; };
 		90C0DB692903E3CA00613480 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90C0DB682903E3CA00613480 /* Preview Assets.xcassets */; };
 		90C7D9292976E0D700A8955E /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7D9282976E0D700A8955E /* Theme.swift */; };
@@ -35,7 +35,7 @@
 		90C0AAAB29882D9E0051E680 /* SleepEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepEditView.swift; sourceTree = "<group>"; };
 		90C0DB5D2903E3C800613480 /* BabySleepDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabySleepDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90C0DB602903E3C800613480 /* BabySleepDiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabySleepDiaryApp.swift; sourceTree = "<group>"; };
-		90C0DB622903E3C800613480 /* SleepLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepLogView.swift; sourceTree = "<group>"; };
+		90C0DB622903E3C800613480 /* SleepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepsView.swift; sourceTree = "<group>"; };
 		90C0DB642903E3CA00613480 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90C0DB662903E3CA00613480 /* BabySleepDiary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BabySleepDiary.entitlements; sourceTree = "<group>"; };
 		90C0DB682903E3CA00613480 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 		90C7D92A2976E0F600A8955E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				90C0DB622903E3C800613480 /* SleepLogView.swift */,
+				90C0DB622903E3C800613480 /* SleepsView.swift */,
 				90C7D92B2976E12500A8955E /* SleepCardView.swift */,
 				90C0AAA529856AC40051E680 /* SleepHeaderView.swift */,
 				90C0AAA729856D130051E680 /* SleepFooterView.swift */,
@@ -192,7 +192,7 @@
 				907C997A2A0D385200EB07BC /* SleepStore.swift in Sources */,
 				90C7D92C2976E12500A8955E /* SleepCardView.swift in Sources */,
 				90C7D9292976E0D700A8955E /* Theme.swift in Sources */,
-				90C0DB632903E3C800613480 /* SleepLogView.swift in Sources */,
+				90C0DB632903E3C800613480 /* SleepsView.swift in Sources */,
 				90C0DB612903E3C800613480 /* BabySleepDiaryApp.swift in Sources */,
 				90684DE929C8D05000897AB8 /* ThemePickerView.swift in Sources */,
 				90772AE029EECD9E00C9F5E5 /* NewSleepSheet.swift in Sources */,

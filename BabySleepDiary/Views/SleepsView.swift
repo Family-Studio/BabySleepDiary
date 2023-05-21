@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SleepLogView: View {
+struct SleepsView: View {
     
     @Binding var sleeps: [DailySleep]
 
@@ -34,7 +34,7 @@ struct SleepLogView: View {
 struct SleepLogView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            SleepLogView(sleeps: .constant(DailySleep.sleeps))
+            SleepsView(sleeps: .constant(DailySleep.sleeps))
         }
     }
 }

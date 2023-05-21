@@ -13,7 +13,7 @@ struct BabySleepDiaryApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                SleepLogView(sleeps: $store.sleeps)
+                SleepsView(sleeps: $store.sleeps)
                     .task {
                         do {
                             try await store.load()
