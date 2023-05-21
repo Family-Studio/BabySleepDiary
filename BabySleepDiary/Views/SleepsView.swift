@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct SleepsView: View {
-    
     @Binding var sleeps: [DailySleep]
+    @Environment(\.scenePhase) private var scenePhase
+    let saveAction: ()->Void
 
     var body: some View {
         VStack() {
@@ -27,6 +28,9 @@ struct SleepsView: View {
             .scrollContentBackground(.hidden)
             Spacer()
             SleepFooterView(sleeps: $sleeps)
+                .onChange(of: scenePhase) { phase in
+                    if phase == .inactive { saveAction() }
+                }
         }
     }
 }
@@ -34,7 +38,7 @@ struct SleepsView: View {
 struct SleepLogView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            SleepsView(sleeps: .constant(DailySleep.sleeps))
+            SleepsView(sleeps: .constant(DailySleep.sleeps), saveAction: {})
         }
     }
 }

@@ -13,7 +13,15 @@ struct BabySleepDiaryApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                SleepsView(sleeps: $store.sleeps)
+                SleepsView(sleeps: $store.sleeps) {
+                    Task {
+                        do {
+                            try await store.save(sleeps: store.sleeps)
+                        } catch {
+                            fatalError(error.localizedDescription)
+                        }
+                    }
+                }
                     .task {
                         do {
                             try await store.load()
