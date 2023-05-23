@@ -9,11 +9,26 @@ import SwiftUI
 
 @main
 struct BabySleepDiaryApp: App {
-    @State private var sleeps = SleepLog.sleeps
+    @StateObject private var store = SleepStore()
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                SleepLogView(sleeps: $sleeps)
+                SleepsView(sleeps: $store.sleeps) {
+                    Task {
+                        do {
+                            try await store.save(sleeps: store.sleeps)
+                        } catch {
+                            fatalError(error.localizedDescription)
+                        }
+                    }
+                }
+                    .task {
+                        do {
+                            try await store.load()
+                        } catch {
+                            fatalError(error.localizedDescription)
+                        }
+                    }
             }
         }
     }
