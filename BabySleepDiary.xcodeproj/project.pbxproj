@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		904150072A1CBDA400980431 /* ErrorWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904150062A1CBDA400980431 /* ErrorWrapper.swift */; };
+		9041500B2A1E509600980431 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9041500A2A1E509600980431 /* ErrorView.swift */; };
 		90684DE729C774CB00897AB8 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90684DE629C774CB00897AB8 /* ThemeView.swift */; };
 		90684DE929C8D05000897AB8 /* ThemePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90684DE829C8D05000897AB8 /* ThemePickerView.swift */; };
 		90772AE029EECD9E00C9F5E5 /* NewSleepSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90772ADF29EECD9E00C9F5E5 /* NewSleepSheet.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		904150062A1CBDA400980431 /* ErrorWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorWrapper.swift; sourceTree = "<group>"; };
+		9041500A2A1E509600980431 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		90684DE629C774CB00897AB8 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
 		90684DE829C8D05000897AB8 /* ThemePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePickerView.swift; sourceTree = "<group>"; };
 		90772ADF29EECD9E00C9F5E5 /* NewSleepSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSleepSheet.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				90C0AAAB29882D9E0051E680 /* SleepEditView.swift */,
 				90684DE629C774CB00897AB8 /* ThemeView.swift */,
 				90684DE829C8D05000897AB8 /* ThemePickerView.swift */,
+				9041500A2A1E509600980431 /* ErrorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				90772AE029EECD9E00C9F5E5 /* NewSleepSheet.swift in Sources */,
 				904150072A1CBDA400980431 /* ErrorWrapper.swift in Sources */,
 				90C0AAA829856D130051E680 /* SleepFooterView.swift in Sources */,
+				9041500B2A1E509600980431 /* ErrorView.swift in Sources */,
 				90C0AAA629856AC40051E680 /* SleepHeaderView.swift in Sources */,
 				90C0AAAA29857F010051E680 /* SleepDetailView.swift in Sources */,
 				90684DE729C774CB00897AB8 /* ThemeView.swift in Sources */,
