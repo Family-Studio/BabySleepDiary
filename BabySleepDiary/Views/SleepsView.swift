@@ -17,7 +17,7 @@ struct SleepsView: View {
             SleepHeaderView()
             List {
                 ForEach($sleeps) { $sleep in
-                    NavigationLink(destination: SleepDetailView(sleep: $sleep)) {
+                    NavigationLink(destination: SleepDetailView(sleep: $sleep, saveAction: { saveAction() } )) {
                         SleepCardView(sleep: sleep)
                     }
                     .listRowSeparator(.hidden)
