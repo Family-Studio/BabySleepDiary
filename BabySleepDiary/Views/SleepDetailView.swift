@@ -12,6 +12,7 @@ struct SleepDetailView: View {
     
     @State private var editingSleep = DailySleep.emptySleep
     @State private var isPresentingEditView = false
+    let saveAction: ()->Void
     
     var body: some View {
         List {
@@ -65,6 +66,8 @@ struct SleepDetailView: View {
                             Button("Done") {
                                 isPresentingEditView = false
                                 sleep = editingSleep
+                                saveAction()
+                                
                             }
                         }
                     }
@@ -76,7 +79,7 @@ struct SleepDetailView: View {
 struct SleepDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            SleepDetailView(sleep: .constant(DailySleep.sleeps[0]))
+            SleepDetailView(sleep: .constant(DailySleep.sleeps[0]), saveAction: {})
         }
     }
 }
