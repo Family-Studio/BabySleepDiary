@@ -11,6 +11,9 @@
 		9041500B2A1E509600980431 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9041500A2A1E509600980431 /* ErrorView.swift */; };
 		90684DE729C774CB00897AB8 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90684DE629C774CB00897AB8 /* ThemeView.swift */; };
 		90684DE929C8D05000897AB8 /* ThemePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90684DE829C8D05000897AB8 /* ThemePickerView.swift */; };
+		9076DD022A30F02900CDE5CF /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9076DD012A30F02900CDE5CF /* RealmManager.swift */; };
+		9076DD052A30F0B400CDE5CF /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 9076DD042A30F0B400CDE5CF /* Realm */; };
+		9076DD072A30F0B400CDE5CF /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9076DD062A30F0B400CDE5CF /* RealmSwift */; };
 		90772AE029EECD9E00C9F5E5 /* NewSleepSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90772ADF29EECD9E00C9F5E5 /* NewSleepSheet.swift */; };
 		907C997A2A0D385200EB07BC /* SleepStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907C99792A0D385100EB07BC /* SleepStore.swift */; };
 		90C0AAA629856AC40051E680 /* SleepHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C0AAA529856AC40051E680 /* SleepHeaderView.swift */; };
@@ -31,6 +34,7 @@
 		9041500A2A1E509600980431 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		90684DE629C774CB00897AB8 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
 		90684DE829C8D05000897AB8 /* ThemePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePickerView.swift; sourceTree = "<group>"; };
+		9076DD012A30F02900CDE5CF /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		90772ADF29EECD9E00C9F5E5 /* NewSleepSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSleepSheet.swift; sourceTree = "<group>"; };
 		907C99792A0D385100EB07BC /* SleepStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepStore.swift; sourceTree = "<group>"; };
 		90C0AAA529856AC40051E680 /* SleepHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepHeaderView.swift; sourceTree = "<group>"; };
@@ -53,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9076DD072A30F0B400CDE5CF /* RealmSwift in Frameworks */,
+				9076DD052A30F0B400CDE5CF /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +122,7 @@
 		90ED9CFC2976DE9F00E37742 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9076DD012A30F02900CDE5CF /* RealmManager.swift */,
 				90C7D9282976E0D700A8955E /* Theme.swift */,
 				90ED9CFD2976DEBB00E37742 /* DailySleep.swift */,
 				907C99792A0D385100EB07BC /* SleepStore.swift */,
@@ -140,6 +147,10 @@
 			dependencies = (
 			);
 			name = BabySleepDiary;
+			packageProductDependencies = (
+				9076DD042A30F0B400CDE5CF /* Realm */,
+				9076DD062A30F0B400CDE5CF /* RealmSwift */,
+			);
 			productName = BabySleepDiary;
 			productReference = 90C0DB5D2903E3C800613480 /* BabySleepDiary.app */;
 			productType = "com.apple.product-type.application";
@@ -168,6 +179,9 @@
 				Base,
 			);
 			mainGroup = 90C0DB542903E3C800613480;
+			packageReferences = (
+				9076DD032A30F0B400CDE5CF /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = 90C0DB5E2903E3C800613480 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -203,6 +217,7 @@
 				90684DE929C8D05000897AB8 /* ThemePickerView.swift in Sources */,
 				90772AE029EECD9E00C9F5E5 /* NewSleepSheet.swift in Sources */,
 				904150072A1CBDA400980431 /* ErrorWrapper.swift in Sources */,
+				9076DD022A30F02900CDE5CF /* RealmManager.swift in Sources */,
 				90C0AAA829856D130051E680 /* SleepFooterView.swift in Sources */,
 				9041500B2A1E509600980431 /* ErrorView.swift in Sources */,
 				90C0AAA629856AC40051E680 /* SleepHeaderView.swift in Sources */,
@@ -428,6 +443,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9076DD032A30F0B400CDE5CF /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9076DD042A30F0B400CDE5CF /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9076DD032A30F0B400CDE5CF /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		9076DD062A30F0B400CDE5CF /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9076DD032A30F0B400CDE5CF /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 90C0DB552903E3C800613480 /* Project object */;
 }
