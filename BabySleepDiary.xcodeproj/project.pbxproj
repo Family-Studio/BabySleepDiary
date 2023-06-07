@@ -14,6 +14,7 @@
 		9076DD022A30F02900CDE5CF /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9076DD012A30F02900CDE5CF /* RealmManager.swift */; };
 		9076DD052A30F0B400CDE5CF /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 9076DD042A30F0B400CDE5CF /* Realm */; };
 		9076DD072A30F0B400CDE5CF /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9076DD062A30F0B400CDE5CF /* RealmSwift */; };
+		9076DD0A2A3117FD00CDE5CF /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9076DD092A3117FD00CDE5CF /* Task.swift */; };
 		90772AE029EECD9E00C9F5E5 /* NewSleepSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90772ADF29EECD9E00C9F5E5 /* NewSleepSheet.swift */; };
 		907C997A2A0D385200EB07BC /* SleepStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907C99792A0D385100EB07BC /* SleepStore.swift */; };
 		90C0AAA629856AC40051E680 /* SleepHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C0AAA529856AC40051E680 /* SleepHeaderView.swift */; };
@@ -35,6 +36,7 @@
 		90684DE629C774CB00897AB8 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
 		90684DE829C8D05000897AB8 /* ThemePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePickerView.swift; sourceTree = "<group>"; };
 		9076DD012A30F02900CDE5CF /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		9076DD092A3117FD00CDE5CF /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		90772ADF29EECD9E00C9F5E5 /* NewSleepSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSleepSheet.swift; sourceTree = "<group>"; };
 		907C99792A0D385100EB07BC /* SleepStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepStore.swift; sourceTree = "<group>"; };
 		90C0AAA529856AC40051E680 /* SleepHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepHeaderView.swift; sourceTree = "<group>"; };
@@ -65,6 +67,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9076DD082A3117D800CDE5CF /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				9076DD012A30F02900CDE5CF /* RealmManager.swift */,
+				9076DD092A3117FD00CDE5CF /* Task.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 		90C0DB542903E3C800613480 = {
 			isa = PBXGroup;
 			children = (
@@ -122,11 +133,11 @@
 		90ED9CFC2976DE9F00E37742 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9076DD012A30F02900CDE5CF /* RealmManager.swift */,
 				90C7D9282976E0D700A8955E /* Theme.swift */,
 				90ED9CFD2976DEBB00E37742 /* DailySleep.swift */,
 				907C99792A0D385100EB07BC /* SleepStore.swift */,
 				904150062A1CBDA400980431 /* ErrorWrapper.swift */,
+				9076DD082A3117D800CDE5CF /* Realm */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -223,6 +234,7 @@
 				90C0AAA629856AC40051E680 /* SleepHeaderView.swift in Sources */,
 				90C0AAAA29857F010051E680 /* SleepDetailView.swift in Sources */,
 				90684DE729C774CB00897AB8 /* ThemeView.swift in Sources */,
+				9076DD0A2A3117FD00CDE5CF /* Task.swift in Sources */,
 				90C0AAAC29882D9E0051E680 /* SleepEditView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
