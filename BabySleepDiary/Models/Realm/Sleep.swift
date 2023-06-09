@@ -13,5 +13,5 @@ class Sleep: Object, ObjectKeyIdentifiable {
     @Persisted var isNight: Bool
     @Persisted var startTime: Date?
     @Persisted var endTime: Date?
-    @Persisted var baby: Baby
+    @Persisted var baby: Baby = Baby()
 }

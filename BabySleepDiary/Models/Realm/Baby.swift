@@ -10,8 +10,9 @@ import RealmSwift
 
 class Baby: Object, ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var id: ObjectId
-    @Persisted var name: String
-    @Persisted var sex: Bool
-    @Persisted var birthday: Date?
+    @Persisted var name: String = "Guest"
+    @Persisted var isBoy: Bool = false
+    @Persisted var birthday: Date? = Date()
     @Persisted var sleeps: List<Sleep>
 }
+
