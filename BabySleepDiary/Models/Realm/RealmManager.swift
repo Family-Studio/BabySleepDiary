@@ -52,4 +52,22 @@ class RealmManager: ObservableObject {
             }
         }
     }
+    
+    func updateSleep(id: Object, isNight: Bool, startTime: Date, endTime: Date) {
+        if let localRealm = localRealm {
+            do {
+                let sleepToUpdate = localRealm.objects(Sleep.self).filter(NSPredicate(format: "id == %@", id))
+                guard !sleepToUpdate.isEmpty else { return }
+                try localRealm.write {
+                    sleepToUpdate[0].isNight = isNight
+                    sleepToUpdate[0].startTime = startTime
+                    sleepToUpdate[0].endTime = endTime
+                    getSleeps()
+                    print("Updated sleep with id \(id)! Other parameters: isNight is \(isNight), startTime is \(startTime), endTime is \(endTime)")
+                }
+            } catch {
+                print("Error editing sleep \(id) to Realm: \(error)")
+            }
+        }
+    }
 }
