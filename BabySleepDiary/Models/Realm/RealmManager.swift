@@ -53,7 +53,7 @@ class RealmManager: ObservableObject {
         }
     }
     
-    func updateSleep(id: Object, isNight: Bool, startTime: Date, endTime: Date) {
+    func updateSleep(id: ObjectId, isNight: Bool, startTime: Date, endTime: Date) {
         if let localRealm = localRealm {
             do {
                 let sleepToUpdate = localRealm.objects(Sleep.self).filter(NSPredicate(format: "id == %@", id))
@@ -67,6 +67,22 @@ class RealmManager: ObservableObject {
                 }
             } catch {
                 print("Error editing sleep \(id) to Realm: \(error)")
+            }
+        }
+    }
+    
+    func deleteSleep(id: ObjectId) {
+        if let localRealm = localRealm {
+            do {
+                let sleepToDelete = localRealm.objects(Sleep.self).filter(NSPredicate(format: "id == %@", id))
+                guard !sleepToDelete.isEmpty else { return }
+                try localRealm.write {
+                    localRealm.delete(sleepToDelete)
+                    getSleeps()
+                    print("Deleted sleep with id \(id)")
+                }
+            } catch {
+                print("Error deleting sleep \(id) from Realm: \(error)")
             }
         }
     }
