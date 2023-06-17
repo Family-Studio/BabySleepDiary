@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct NewSleepSheet: View {
+    @EnvironmentObject var realmManager: RealmManager
     @State private var newSleep = DailySleep.emptySleep
     @Binding var isPresentingNewSleepView: Bool
     @Binding var sleeps: [DailySleep]
@@ -35,5 +36,6 @@ struct NewSleepSheet: View {
 struct NewSleepSheet_Previews: PreviewProvider {
     static var previews: some View {
         NewSleepSheet(isPresentingNewSleepView: .constant(true), sleeps: .constant(DailySleep.sleeps))
+            .environmentObject(RealmManager())
     }
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SleepCardView: View {
+    @EnvironmentObject var realmManager: RealmManager
     let sleep: DailySleep
     var body: some View {
         VStack {
@@ -59,5 +60,6 @@ struct SleepCardView_Previews: PreviewProvider {
         SleepCardView(sleep: sleep)
             .background(sleep.theme.mainColor)
             .previewLayout(.fixed(width: 400, height: 150))
+//            .environmentObject(RealmManager())
     }
 }

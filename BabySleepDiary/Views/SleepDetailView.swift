@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct SleepDetailView: View {
+    @EnvironmentObject var realmManager: RealmManager
     @Binding var sleep: DailySleep
-    
     @State private var editingSleep = DailySleep.emptySleep
     @State private var isPresentingEditView = false
     let saveAction: ()->Void
@@ -80,6 +80,7 @@ struct SleepDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             SleepDetailView(sleep: .constant(DailySleep.sleeps[0]), saveAction: {})
+                .environmentObject(RealmManager())
         }
     }
 }

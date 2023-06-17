@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SleepsView: View {
+    @StateObject var realmManager = RealmManager()
     @Binding var sleeps: [DailySleep]
     @Environment(\.scenePhase) private var scenePhase
     let saveAction: ()->Void
@@ -15,6 +16,7 @@ struct SleepsView: View {
     var body: some View {
         VStack() {
             SleepHeaderView()
+                .environmentObject(realmManager)
             List {
                 ForEach($sleeps) { $sleep in
                     NavigationLink(destination: SleepDetailView(sleep: $sleep, saveAction: { saveAction() } )) {
