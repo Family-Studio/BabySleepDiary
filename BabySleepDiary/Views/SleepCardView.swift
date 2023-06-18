@@ -50,7 +50,6 @@ struct SleepCardView: View {
                 }
             }
         .padding(2)
-        .foregroundColor(sleep.theme.accentColor)
     }
 }
 
@@ -58,8 +57,8 @@ struct SleepCardView_Previews: PreviewProvider {
     static var sleep = DailySleep.sleeps[0]
     static var previews: some View {
         SleepCardView(sleep: sleep)
-            .background(sleep.theme.mainColor)
+            .background(Color("spring"))
             .previewLayout(.fixed(width: 400, height: 150))
-//            .environmentObject(RealmManager())
+            .environmentObject(RealmManager())
     }
 }

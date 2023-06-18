@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		904150072A1CBDA400980431 /* ErrorWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904150062A1CBDA400980431 /* ErrorWrapper.swift */; };
 		9041500B2A1E509600980431 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9041500A2A1E509600980431 /* ErrorView.swift */; };
-		90684DE729C774CB00897AB8 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90684DE629C774CB00897AB8 /* ThemeView.swift */; };
-		90684DE929C8D05000897AB8 /* ThemePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90684DE829C8D05000897AB8 /* ThemePickerView.swift */; };
 		9076DD022A30F02900CDE5CF /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9076DD012A30F02900CDE5CF /* RealmManager.swift */; };
 		9076DD052A30F0B400CDE5CF /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 9076DD042A30F0B400CDE5CF /* Realm */; };
 		9076DD072A30F0B400CDE5CF /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9076DD062A30F0B400CDE5CF /* RealmSwift */; };
@@ -26,7 +24,6 @@
 		90C0DB632903E3C800613480 /* SleepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C0DB622903E3C800613480 /* SleepsView.swift */; };
 		90C0DB652903E3CA00613480 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90C0DB642903E3CA00613480 /* Assets.xcassets */; };
 		90C0DB692903E3CA00613480 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90C0DB682903E3CA00613480 /* Preview Assets.xcassets */; };
-		90C7D9292976E0D700A8955E /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7D9282976E0D700A8955E /* Theme.swift */; };
 		90C7D92C2976E12500A8955E /* SleepCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7D92B2976E12500A8955E /* SleepCardView.swift */; };
 		90ED9CFE2976DEBB00E37742 /* DailySleep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ED9CFD2976DEBB00E37742 /* DailySleep.swift */; };
 /* End PBXBuildFile section */
@@ -34,8 +31,6 @@
 /* Begin PBXFileReference section */
 		904150062A1CBDA400980431 /* ErrorWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorWrapper.swift; sourceTree = "<group>"; };
 		9041500A2A1E509600980431 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
-		90684DE629C774CB00897AB8 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
-		90684DE829C8D05000897AB8 /* ThemePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePickerView.swift; sourceTree = "<group>"; };
 		9076DD012A30F02900CDE5CF /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		9076DD092A3117FD00CDE5CF /* Sleep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sleep.swift; sourceTree = "<group>"; };
 		9076DD0B2A32462100CDE5CF /* Baby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Baby.swift; sourceTree = "<group>"; };
@@ -51,7 +46,6 @@
 		90C0DB642903E3CA00613480 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90C0DB662903E3CA00613480 /* BabySleepDiary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BabySleepDiary.entitlements; sourceTree = "<group>"; };
 		90C0DB682903E3CA00613480 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		90C7D9282976E0D700A8955E /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		90C7D92B2976E12500A8955E /* SleepCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepCardView.swift; sourceTree = "<group>"; usesTabs = 0; };
 		90ED9CFD2976DEBB00E37742 /* DailySleep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySleep.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,8 +121,6 @@
 				90772ADF29EECD9E00C9F5E5 /* NewSleepSheet.swift */,
 				90C0AAA929857F010051E680 /* SleepDetailView.swift */,
 				90C0AAAB29882D9E0051E680 /* SleepEditView.swift */,
-				90684DE629C774CB00897AB8 /* ThemeView.swift */,
-				90684DE829C8D05000897AB8 /* ThemePickerView.swift */,
 				9041500A2A1E509600980431 /* ErrorView.swift */,
 			);
 			path = Views;
@@ -137,7 +129,6 @@
 		90ED9CFC2976DE9F00E37742 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				90C7D9282976E0D700A8955E /* Theme.swift */,
 				90ED9CFD2976DEBB00E37742 /* DailySleep.swift */,
 				907C99792A0D385100EB07BC /* SleepStore.swift */,
 				904150062A1CBDA400980431 /* ErrorWrapper.swift */,
@@ -226,11 +217,9 @@
 				90ED9CFE2976DEBB00E37742 /* DailySleep.swift in Sources */,
 				907C997A2A0D385200EB07BC /* SleepStore.swift in Sources */,
 				90C7D92C2976E12500A8955E /* SleepCardView.swift in Sources */,
-				90C7D9292976E0D700A8955E /* Theme.swift in Sources */,
 				90C0DB632903E3C800613480 /* SleepsView.swift in Sources */,
 				90C0DB612903E3C800613480 /* BabySleepDiaryApp.swift in Sources */,
 				9076DD0C2A32462100CDE5CF /* Baby.swift in Sources */,
-				90684DE929C8D05000897AB8 /* ThemePickerView.swift in Sources */,
 				90772AE029EECD9E00C9F5E5 /* NewSleepSheet.swift in Sources */,
 				904150072A1CBDA400980431 /* ErrorWrapper.swift in Sources */,
 				9076DD022A30F02900CDE5CF /* RealmManager.swift in Sources */,
@@ -238,7 +227,6 @@
 				9041500B2A1E509600980431 /* ErrorView.swift in Sources */,
 				90C0AAA629856AC40051E680 /* SleepHeaderView.swift in Sources */,
 				90C0AAAA29857F010051E680 /* SleepDetailView.swift in Sources */,
-				90684DE729C774CB00897AB8 /* ThemeView.swift in Sources */,
 				9076DD0A2A3117FD00CDE5CF /* Sleep.swift in Sources */,
 				90C0AAAC29882D9E0051E680 /* SleepEditView.swift in Sources */,
 			);

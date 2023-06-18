@@ -23,7 +23,7 @@ struct SleepsView: View {
                         SleepCardView(sleep: sleep)
                     }
                     .listRowSeparator(.hidden)
-                    .listRowBackground(sleep.theme.mainColor)
+                    .listRowBackground(Color("spring"))
                 }
             }
             .background(.white)
