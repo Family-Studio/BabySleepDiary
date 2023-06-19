@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SleepHeaderView: View {
+    @EnvironmentObject var realmManager: RealmManager
     @State var selectedDate = Date()
     var closedRange: ClosedRange<Date> {
         let currentDate = Calendar.current.date(byAdding: .day, value: 0, to: Date())!
@@ -39,5 +40,6 @@ struct SleepHeaderView: View {
 struct DailySleepHeaderView_Previews: PreviewProvider {
     static var previews: some View {
         SleepHeaderView()
+            .environmentObject(RealmManager())
     }
 }

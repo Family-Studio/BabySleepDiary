@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SleepFooterView: View {
+    @EnvironmentObject var realmManager: RealmManager
     @State private var isPresentingNewSleepView = false
     @Binding var sleeps: [DailySleep]
     
@@ -33,5 +34,6 @@ struct SleepFooterView: View {
 struct DailySleepFooterView_Previews: PreviewProvider {
     static var previews: some View {
         SleepFooterView(sleeps: .constant(DailySleep.sleeps))
+            .environmentObject(RealmManager())
     }
 }

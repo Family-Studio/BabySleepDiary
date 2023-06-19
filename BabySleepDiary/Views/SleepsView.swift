@@ -24,6 +24,7 @@ struct SleepsView: View {
                     }
                     .listRowSeparator(.hidden)
                     .listRowBackground(Color("spring"))
+                    .environmentObject(RealmManager())
                 }
             }
             .background(.white)
@@ -33,6 +34,7 @@ struct SleepsView: View {
                 .onChange(of: scenePhase) { phase in
                     if phase == .inactive { saveAction() }
                 }
+                .environmentObject(RealmManager())
         }
     }
 }
