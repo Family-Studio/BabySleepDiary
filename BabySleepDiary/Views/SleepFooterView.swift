@@ -26,7 +26,7 @@ struct SleepFooterView: View {
         }
         .padding(0)
         .sheet(isPresented: $isPresentingNewSleepView) {
-            NewSleepSheet(isPresentingNewSleepView: $isPresentingNewSleepView, sleeps: $sleeps)
+            NewSleepSheet(isPresentingNewSleepView: $isPresentingNewSleepView)
         }
     }
 }

@@ -115,12 +115,12 @@
 			isa = PBXGroup;
 			children = (
 				90C0DB622903E3C800613480 /* SleepsView.swift */,
-				90C7D92B2976E12500A8955E /* SleepCardView.swift */,
 				90C0AAA529856AC40051E680 /* SleepHeaderView.swift */,
 				90C0AAA729856D130051E680 /* SleepFooterView.swift */,
-				90772ADF29EECD9E00C9F5E5 /* NewSleepSheet.swift */,
+				90C7D92B2976E12500A8955E /* SleepCardView.swift */,
 				90C0AAA929857F010051E680 /* SleepDetailView.swift */,
 				90C0AAAB29882D9E0051E680 /* SleepEditView.swift */,
+				90772ADF29EECD9E00C9F5E5 /* NewSleepSheet.swift */,
 				9041500A2A1E509600980431 /* ErrorView.swift */,
 			);
 			path = Views;

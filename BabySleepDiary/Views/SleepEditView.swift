@@ -9,14 +9,20 @@ import SwiftUI
 
 struct SleepEditView: View {
     @EnvironmentObject var realmManager: RealmManager
-    @Binding var sleep: DailySleep
+    @State private var isNight: Bool = false
+    @State private var startTime: Date?
+    @State private var endTime: Date?
     
     var body: some View {
         Form {
             Section(header: Text("Edit sleep")) {
-                TextField("Start time", text: $sleep.startTime)
-                TextField("End time", text: $sleep.endTime)
-                TextField("Night or day sleep", text: $sleep.dayOrNightSleep)
+                Toggle(isOn: $isNight) {
+                    if isNight {
+                        Label("Night", systemImage: "moon.stars")
+                    } else {
+                        Label("Day", systemImage: "sun.max")
+                    }
+                }
             }
         }
     }
@@ -24,7 +30,7 @@ struct SleepEditView: View {
 
 struct SleepEditView_Previews: PreviewProvider {
     static var previews: some View {
-        SleepEditView(sleep: .constant(DailySleep.sleeps[0]))
+        SleepEditView()
             .environmentObject(RealmManager())
     }
 }

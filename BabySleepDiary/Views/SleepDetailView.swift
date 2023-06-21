@@ -33,12 +33,6 @@ struct SleepDetailView: View {
                     Text("\(sleep.sleepDuration)")
                 }
             }
-            Section(header: Label("Settings", systemImage: "slider.horizontal.2.square.on.square")) {
-                HStack {
-                    Label("Theme", systemImage: "theatermask.and.paintbrush")
-                    Spacer()
-                }
-            }
             Section(header: Label("Actions", systemImage: "slider.horizontal.3")) {
                 Label("Edit", systemImage: "slider.horizontal.2.gobackward")
                         .foregroundColor(.accentColor)
@@ -54,7 +48,7 @@ struct SleepDetailView: View {
         }
         .sheet(isPresented: $isPresentingEditView) {
             NavigationView {
-                SleepEditView(sleep: $editingSleep)
+                SleepEditView()
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
                             Button ("Cancel") {
