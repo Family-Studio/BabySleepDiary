@@ -16,6 +16,7 @@
 		9076DD0C2A32462100CDE5CF /* Baby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9076DD0B2A32462100CDE5CF /* Baby.swift */; };
 		90772AE029EECD9E00C9F5E5 /* NewSleepSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90772ADF29EECD9E00C9F5E5 /* NewSleepSheet.swift */; };
 		907C997A2A0D385200EB07BC /* SleepStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907C99792A0D385100EB07BC /* SleepStore.swift */; };
+		909BBFDD2A49D8F9008BFBF9 /* DoubleDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909BBFDC2A49D8F9008BFBF9 /* DoubleDatePickerView.swift */; };
 		90C0AAA629856AC40051E680 /* SleepHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C0AAA529856AC40051E680 /* SleepHeaderView.swift */; };
 		90C0AAA829856D130051E680 /* SleepFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C0AAA729856D130051E680 /* SleepFooterView.swift */; };
 		90C0AAAA29857F010051E680 /* SleepDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C0AAA929857F010051E680 /* SleepDetailView.swift */; };
@@ -36,6 +37,7 @@
 		9076DD0B2A32462100CDE5CF /* Baby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Baby.swift; sourceTree = "<group>"; };
 		90772ADF29EECD9E00C9F5E5 /* NewSleepSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSleepSheet.swift; sourceTree = "<group>"; };
 		907C99792A0D385100EB07BC /* SleepStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepStore.swift; sourceTree = "<group>"; };
+		909BBFDC2A49D8F9008BFBF9 /* DoubleDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleDatePickerView.swift; sourceTree = "<group>"; };
 		90C0AAA529856AC40051E680 /* SleepHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepHeaderView.swift; sourceTree = "<group>"; };
 		90C0AAA729856D130051E680 /* SleepFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepFooterView.swift; sourceTree = "<group>"; };
 		90C0AAA929857F010051E680 /* SleepDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepDetailView.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				90C0AAAB29882D9E0051E680 /* SleepEditView.swift */,
 				90772ADF29EECD9E00C9F5E5 /* NewSleepSheet.swift */,
 				9041500A2A1E509600980431 /* ErrorView.swift */,
+				909BBFDC2A49D8F9008BFBF9 /* DoubleDatePickerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				90C0DB612903E3C800613480 /* BabySleepDiaryApp.swift in Sources */,
 				9076DD0C2A32462100CDE5CF /* Baby.swift in Sources */,
 				90772AE029EECD9E00C9F5E5 /* NewSleepSheet.swift in Sources */,
+				909BBFDD2A49D8F9008BFBF9 /* DoubleDatePickerView.swift in Sources */,
 				904150072A1CBDA400980431 /* ErrorWrapper.swift in Sources */,
 				9076DD022A30F02900CDE5CF /* RealmManager.swift in Sources */,
 				90C0AAA829856D130051E680 /* SleepFooterView.swift in Sources */,

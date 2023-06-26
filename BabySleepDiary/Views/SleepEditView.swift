@@ -10,31 +10,24 @@ import SwiftUI
 struct SleepEditView: View {
     @EnvironmentObject var realmManager: RealmManager
     @State private var isNight: Bool = false
-    @State private var startTime = Date()
-    @State private var endTime: Date?
-    var closedRange: ClosedRange<Date> {
-        let currentDate = Calendar.current.date(byAdding: .day, value: 0, to: Date())!
-        let monthAgo = Calendar.current.date(byAdding: .day, value: -30, to: Date())!
-        return monthAgo...currentDate
-    }
     var body: some View {
         Form {
-            Section(header: Text("Edit sleep")) {
+            Section(header: Text("Add or edit the sleep")) {
                 HStack {
                     Text("Start time: ")
                     Spacer()
-                    DatePicker("", selection: $startTime, in: closedRange, displayedComponents: .hourAndMinute)
-                    DatePicker("", selection: $startTime, in: closedRange, displayedComponents: .date)
-                        .labelsHidden()
-                        .pickerStyle(.wheel)
+                    DoubleDatePickerView()
                 }
                 HStack {
                     Text("End time: ")
                     Spacer()
-                    DatePicker("", selection: $startTime, in: closedRange, displayedComponents: .hourAndMinute)
-                    DatePicker("", selection: $startTime, in: closedRange, displayedComponents: .date)
-                        .labelsHidden()
-                        .pickerStyle(.wheel)
+                    DoubleDatePickerView()
+                }
+                HStack {
+                    Text("Duration:")
+                    Spacer()
+                    Text("5 hours 59 minutes")
+                        .bold()
                 }
                 HStack {
                     Text("Sleep period:")
