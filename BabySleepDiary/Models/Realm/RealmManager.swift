@@ -34,11 +34,11 @@ class RealmManager: ObservableObject {
                     let newSleep = Sleep(value: ["isNight": isNight, "startTime": startTime ?? Date(), "endTime": endTime ?? Date()] as [String : Any])
                     localRealm.add(newSleep)
                     getSleeps()
-                    print("Added new baby to Realm: \(newSleep)")
+                    print("Added new sleep to Realm: \(newSleep)")
                 }
                 
             } catch {
-                print("Error adding baby to Realm: \(error)")
+                print("Error adding sleep to Realm: \(error)")
             }
         }
     }

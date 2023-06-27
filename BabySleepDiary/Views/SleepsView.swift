@@ -9,40 +9,28 @@ import SwiftUI
 
 struct SleepsView: View {
     @StateObject var realmManager = RealmManager()
-    @Binding var sleeps: [DailySleep]
     @Environment(\.scenePhase) private var scenePhase
-    let saveAction: ()->Void
+    @Binding var isNight: Bool
+    @Binding var startTime: Date?
+    @Binding var endTime: Date?
 
     var body: some View {
         VStack() {
             SleepHeaderView()
                 .environmentObject(realmManager)
-            List {
-                ForEach($sleeps) { $sleep in
-                    NavigationLink(destination: SleepDetailView(sleep: $sleep, saveAction: { saveAction() } )) {
-                        SleepCardView(sleep: sleep)
-                    }
-                    .listRowSeparator(.hidden)
-                    .listRowBackground(Color("spring"))
-                    .environmentObject(RealmManager())
-                }
             }
             .background(.white)
             .scrollContentBackground(.hidden)
             Spacer()
-            SleepFooterView(sleeps: $sleeps)
-                .onChange(of: scenePhase) { phase in
-                    if phase == .inactive { saveAction() }
-                }
-                .environmentObject(RealmManager())
+        SleepFooterView(isNight: $isNight, startTime: $startTime, endTime: $endTime)
+                .environmentObject(realmManager)
         }
-    }
 }
 
 struct SleepLogView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            SleepsView(sleeps: .constant(DailySleep.sleeps), saveAction: {})
+            SleepsView(isNight: .constant(true), startTime: .constant(.now), endTime: .constant(.now))
         }
     }
 }

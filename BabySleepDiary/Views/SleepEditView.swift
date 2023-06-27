@@ -10,6 +10,8 @@ import SwiftUI
 struct SleepEditView: View {
     @EnvironmentObject var realmManager: RealmManager
     @State private var isNight: Bool = false
+    @State private var startTime: Date = .now
+    @State private var endTime: Date = .now
     var body: some View {
         Form {
             Section(header: Text("Add or edit the sleep")) {
