@@ -9,26 +9,25 @@ import SwiftUI
 
 struct SleepCardView: View {
     @EnvironmentObject var realmManager: RealmManager
-    let sleep: DailySleep
     var body: some View {
         VStack {
             HStack(alignment: .center) {
                 Spacer()
-                Label("\(sleep.wakeDuration)", systemImage: "clock.arrow.circlepath")
+                Label("5 hours 59 minutes", systemImage: "clock.arrow.circlepath")
                     .labelStyle(.titleAndIcon)
                     .font(.footnote).bold()
             }
             Divider()
             HStack {
                 VStack {
-                    Text(sleep.endTime)
+                    Text("22:12")
                     Spacer()
                     HStack {
                         Divider()
                     }
                     HStack{
                         Spacer()
-                        Image(systemName: "\(sleep.dayOrNightIcon)")
+                        Image(systemName: "questionmark.app")
                             .resizable()
                             .frame(width: 32.0, height: 32.0)
                         Spacer()
@@ -38,25 +37,24 @@ struct SleepCardView: View {
                     HStack {
                         Divider()
                     }
-                    Text(sleep.startTime)
+                    Text("13:00")
                 }
                 VStack(alignment: .leading) {
                     Spacer()
-                    Text("\(sleep.dayOrNightSleep) sleep:")
-                    Text(sleep.sleepDuration).bold()
-                    Spacer()
-                    }
+                    Text("Day sleep:")
+                    Text("5 hours 59 minutes").bold()
                     Spacer()
                 }
+                Spacer()
             }
+        }
         .padding(2)
     }
 }
 
 struct SleepCardView_Previews: PreviewProvider {
-    static var sleep = DailySleep.sleeps[0]
     static var previews: some View {
-        SleepCardView(sleep: sleep)
+        SleepCardView()
             .background(Color("spring"))
             .previewLayout(.fixed(width: 400, height: 150))
             .environmentObject(RealmManager())

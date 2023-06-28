@@ -10,9 +10,6 @@ import SwiftUI
 struct NewSleepSheet: View {
     @EnvironmentObject var realmManager: RealmManager
     @Binding var isPresentingNewSleepView: Bool
-    @Binding var isNight: Bool
-    @Binding var startTime: Date?
-    @Binding var endTime: Date?
     
     var body: some View {
         NavigationStack {
@@ -25,7 +22,6 @@ struct NewSleepSheet: View {
                     }
                     ToolbarItem(placement: .confirmationAction) {
                         Button("Add") {
-                            realmManager.addSleep(isNight: isNight, startTime: startTime, endTime: endTime)
                             isPresentingNewSleepView = false
                         }
                     }
@@ -36,7 +32,7 @@ struct NewSleepSheet: View {
 
 struct NewSleepSheet_Previews: PreviewProvider {
     static var previews: some View {
-        NewSleepSheet(isPresentingNewSleepView: .constant(true), isNight: .constant(true), startTime: .constant(.now), endTime: .constant(.now))
+        NewSleepSheet(isPresentingNewSleepView: .constant(true))
             .environmentObject(RealmManager())
     }
 }

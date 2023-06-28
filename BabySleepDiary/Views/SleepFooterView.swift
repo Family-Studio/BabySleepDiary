@@ -10,9 +10,6 @@ import SwiftUI
 struct SleepFooterView: View {
     @EnvironmentObject var realmManager: RealmManager
     @State private var isPresentingNewSleepView = false
-    @Binding var isNight: Bool
-    @Binding var startTime: Date?
-    @Binding var endTime: Date?
     
     var body: some View {
         HStack {
@@ -28,14 +25,14 @@ struct SleepFooterView: View {
         }
         .padding(0)
         .sheet(isPresented: $isPresentingNewSleepView) {
-            NewSleepSheet(isPresentingNewSleepView: $isPresentingNewSleepView, isNight: $isNight, startTime: $startTime, endTime: $endTime)
+            NewSleepSheet(realmManager: _realmManager, isPresentingNewSleepView: $isPresentingNewSleepView)
         }
     }
 }
 
 struct DailySleepFooterView_Previews: PreviewProvider {
     static var previews: some View {
-        SleepFooterView(isNight: .constant(true), startTime: .constant(.now), endTime: .constant(.now))
+        SleepFooterView()
             .environmentObject(RealmManager())
     }
 }
