@@ -8,46 +8,35 @@
 import SwiftUI
 
 struct SleepDetailView: View {
-    @Binding var sleep: DailySleep
-    
-    @State private var editingSleep = DailySleep.emptySleep
+    @EnvironmentObject var realmManager: RealmManager
     @State private var isPresentingEditView = false
-    let saveAction: ()->Void
     
     var body: some View {
         List {
-            Section(header: Label("\(sleep.dayOrNightSleep) sleep details", systemImage: sleep.dayOrNightIcon)) {
+            Section(header: Label("Day sleep details", systemImage: "questionmark.app")) {
                 HStack {
                     Label("Start time", systemImage: "play")
                     Spacer()
-                    Text("\(sleep.startTime)")
+                    Text("22:08")
                 }
                 HStack {
                     Label("End time", systemImage: "stop")
                     Spacer()
-                    Text("\(sleep.endTime)")
+                    Text("22:08")
                 }
                 HStack {
                     Label("Duration", systemImage: "alarm")
                     Spacer()
-                    Text("\(sleep.sleepDuration)")
-                }
-            }
-            Section(header: Label("Settings", systemImage: "slider.horizontal.2.square.on.square")) {
-                HStack {
-                    Label("Theme", systemImage: "theatermask.and.paintbrush")
-                    Spacer()
-                    ThemeView(theme: sleep.theme)
+                    Text("5 hours 59 minutes")
                 }
             }
             Section(header: Label("Actions", systemImage: "slider.horizontal.3")) {
                 Label("Edit", systemImage: "slider.horizontal.2.gobackward")
-                        .foregroundColor(.accentColor)
-                        .font(.headline)
-                        .onTapGesture {
-                            isPresentingEditView = true
-                            editingSleep = sleep
-                        }
+                    .foregroundColor(.accentColor)
+                    .font(.headline)
+                    .onTapGesture {
+                        isPresentingEditView = true
+                    }
                 Label("Detete", systemImage: "trash")
                     .foregroundColor(.red)
                     .font(.headline)
@@ -55,7 +44,7 @@ struct SleepDetailView: View {
         }
         .sheet(isPresented: $isPresentingEditView) {
             NavigationView {
-                SleepEditView(sleep: $editingSleep)
+                SleepEditView()
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
                             Button ("Cancel") {
@@ -65,9 +54,6 @@ struct SleepDetailView: View {
                         ToolbarItem(placement: .confirmationAction) {
                             Button("Done") {
                                 isPresentingEditView = false
-                                sleep = editingSleep
-                                saveAction()
-                                
                             }
                         }
                     }
@@ -79,7 +65,8 @@ struct SleepDetailView: View {
 struct SleepDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            SleepDetailView(sleep: .constant(DailySleep.sleeps[0]), saveAction: {})
+            SleepDetailView()
+                .environmentObject(RealmManager())
         }
     }
 }

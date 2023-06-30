@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct SleepFooterView: View {
+    @EnvironmentObject var realmManager: RealmManager
     @State private var isPresentingNewSleepView = false
-    @Binding var sleeps: [DailySleep]
     
     var body: some View {
         HStack {
@@ -25,13 +25,14 @@ struct SleepFooterView: View {
         }
         .padding(0)
         .sheet(isPresented: $isPresentingNewSleepView) {
-            NewSleepSheet(isPresentingNewSleepView: $isPresentingNewSleepView, sleeps: $sleeps)
+            NewSleepSheet(realmManager: _realmManager, isPresentingNewSleepView: $isPresentingNewSleepView, sleepEditView: SleepEditView())
         }
     }
 }
 
 struct DailySleepFooterView_Previews: PreviewProvider {
     static var previews: some View {
-        SleepFooterView(sleeps: .constant(DailySleep.sleeps))
+        SleepFooterView()
+            .environmentObject(RealmManager())
     }
 }
