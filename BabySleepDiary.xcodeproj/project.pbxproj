@@ -25,7 +25,6 @@
 		90C0DB652903E3CA00613480 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90C0DB642903E3CA00613480 /* Assets.xcassets */; };
 		90C0DB692903E3CA00613480 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90C0DB682903E3CA00613480 /* Preview Assets.xcassets */; };
 		90C7D92C2976E12500A8955E /* SleepCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7D92B2976E12500A8955E /* SleepCardView.swift */; };
-		90ED9CFE2976DEBB00E37742 /* DailySleep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ED9CFD2976DEBB00E37742 /* DailySleep.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +46,6 @@
 		90C0DB662903E3CA00613480 /* BabySleepDiary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BabySleepDiary.entitlements; sourceTree = "<group>"; };
 		90C0DB682903E3CA00613480 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		90C7D92B2976E12500A8955E /* SleepCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepCardView.swift; sourceTree = "<group>"; usesTabs = 0; };
-		90ED9CFD2976DEBB00E37742 /* DailySleep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySleep.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +128,6 @@
 		90ED9CFC2976DE9F00E37742 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				90ED9CFD2976DEBB00E37742 /* DailySleep.swift */,
 				904150062A1CBDA400980431 /* ErrorWrapper.swift */,
 				9076DD082A3117D800CDE5CF /* Realm */,
 			);
@@ -214,7 +211,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90ED9CFE2976DEBB00E37742 /* DailySleep.swift in Sources */,
 				90C7D92C2976E12500A8955E /* SleepCardView.swift in Sources */,
 				90C0DB632903E3C800613480 /* SleepsView.swift in Sources */,
 				90C0DB612903E3C800613480 /* BabySleepDiaryApp.swift in Sources */,

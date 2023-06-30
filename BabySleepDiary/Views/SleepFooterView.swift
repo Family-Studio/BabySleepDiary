@@ -25,7 +25,7 @@ struct SleepFooterView: View {
         }
         .padding(0)
         .sheet(isPresented: $isPresentingNewSleepView) {
-            NewSleepSheet(realmManager: _realmManager, isPresentingNewSleepView: $isPresentingNewSleepView)
+            NewSleepSheet(realmManager: _realmManager, isPresentingNewSleepView: $isPresentingNewSleepView, sleepEditView: SleepEditView())
         }
     }
 }
