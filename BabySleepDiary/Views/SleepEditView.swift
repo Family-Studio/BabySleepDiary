@@ -9,21 +9,21 @@ import SwiftUI
 
 struct SleepEditView: View {
     @EnvironmentObject var realmManager: RealmManager
-    @State var isNight: Bool = false
-    @State var startTime: Date = .now
-    @State var endTime: Date = .now
+    @Binding var isNight: Bool
+    @Binding var startTime: Date
+    @Binding var endTime: Date
     var body: some View {
         Form {
             Section(header: Text("Add or edit the sleep")) {
                 HStack {
                     Text("Start time: ")
                     Spacer()
-                    DoubleDatePickerView()
+                    DoubleDatePickerView(selectedDate: $startTime)
                 }
                 HStack {
                     Text("End time: ")
                     Spacer()
-                    DoubleDatePickerView()
+                    DoubleDatePickerView(selectedDate: $endTime)
                 }
                 HStack {
                     Text("Duration:")
@@ -50,7 +50,7 @@ struct SleepEditView: View {
 
 struct SleepEditView_Previews: PreviewProvider {
     static var previews: some View {
-        SleepEditView()
+        SleepEditView(isNight: .constant(true), startTime: .constant(.now), endTime: .constant(.now))
             .environmentObject(RealmManager())
     }
 }

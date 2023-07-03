@@ -10,6 +10,9 @@ import SwiftUI
 struct SleepDetailView: View {
     @EnvironmentObject var realmManager: RealmManager
     @State private var isPresentingEditView = false
+    @Binding var isNight: Bool
+    @Binding var startTime: Date
+    @Binding var endTime: Date
     
     var body: some View {
         List {
@@ -44,7 +47,7 @@ struct SleepDetailView: View {
         }
         .sheet(isPresented: $isPresentingEditView) {
             NavigationView {
-                SleepEditView()
+                SleepEditView(realmManager: _realmManager, isNight: $isNight, startTime: $startTime, endTime: $endTime)
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
                             Button ("Cancel") {
@@ -65,7 +68,7 @@ struct SleepDetailView: View {
 struct SleepDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            SleepDetailView()
+            SleepDetailView(isNight: .constant(true), startTime: .constant(.now), endTime: .constant(.now))
                 .environmentObject(RealmManager())
         }
     }

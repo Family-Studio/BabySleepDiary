@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DoubleDatePickerView: View {
-    @State var selectedDate = Date()
+    @Binding var selectedDate: Date
 
     var body: some View {
         VStack {
@@ -20,12 +20,13 @@ struct DoubleDatePickerView: View {
             )
             .labelsHidden()
             .datePickerStyle(.compact)
+            .padding(1)
         }
     }
 }
 
 struct DoubleDatePickerView_Previews: PreviewProvider {
     static var previews: some View {
-        DoubleDatePickerView()
+        DoubleDatePickerView(selectedDate: .constant(.now))
     }
 }

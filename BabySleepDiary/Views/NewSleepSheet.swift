@@ -10,11 +10,13 @@ import SwiftUI
 struct NewSleepSheet: View {
     @EnvironmentObject var realmManager: RealmManager
     @Binding var isPresentingNewSleepView: Bool
-    var sleepEditView: SleepEditView
+    @State var isNight: Bool = false
+    @State var startTime: Date = .now
+    @State var endTime: Date = .now
     
     var body: some View {
         NavigationStack {
-            SleepEditView()
+            SleepEditView(isNight: $isNight, startTime: $startTime, endTime: $endTime)
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
                         Button("Dismiss") {
@@ -23,8 +25,8 @@ struct NewSleepSheet: View {
                     }
                     ToolbarItem(placement: .confirmationAction) {
                         Button("Add") {
-                            realmManager.addSleep(isNight: sleepEditView.isNight, startTime: sleepEditView.startTime, endTime: sleepEditView.endTime)
                             isPresentingNewSleepView = false
+                            realmManager.addSleep(isNight: isNight, startTime: startTime, endTime: endTime)
                         }
                     }
                 }
@@ -34,7 +36,7 @@ struct NewSleepSheet: View {
 
 struct NewSleepSheet_Previews: PreviewProvider {
     static var previews: some View {
-        NewSleepSheet(isPresentingNewSleepView: .constant(true), sleepEditView: SleepEditView())
+        NewSleepSheet(isPresentingNewSleepView: .constant(true))
             .environmentObject(RealmManager())
     }
 }
