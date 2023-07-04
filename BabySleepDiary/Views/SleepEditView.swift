@@ -12,6 +12,16 @@ struct SleepEditView: View {
     @Binding var isNight: Bool
     @Binding var startTime: Date
     @Binding var endTime: Date
+    
+    private func calculateDuration() -> String {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.hour, .minute], from: startTime, to: endTime)
+        let hours = components.hour ?? 0
+        let minutes = components.minute ?? 0
+        
+        return "\(hours) hours \(minutes) minutes"
+    }
+    
     var body: some View {
         Form {
             Section(header: Text("Add or edit the sleep")) {
@@ -28,7 +38,7 @@ struct SleepEditView: View {
                 HStack {
                     Text("Duration:")
                     Spacer()
-                    Text("5 hours 59 minutes")
+                    Text(calculateDuration())
                         .bold()
                 }
                 HStack {
@@ -50,7 +60,7 @@ struct SleepEditView: View {
 
 struct SleepEditView_Previews: PreviewProvider {
     static var previews: some View {
-        SleepEditView(isNight: .constant(true), startTime: .constant(.now), endTime: .constant(.now))
+        SleepEditView(isNight: .constant(true), startTime: .constant(Date()), endTime: .constant(Date().addingTimeInterval(3600))) // Example: 1-hour duration
             .environmentObject(RealmManager())
     }
 }
