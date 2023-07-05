@@ -9,6 +9,9 @@ import SwiftUI
 
 struct SleepCardView: View {
     @EnvironmentObject var realmManager: RealmManager
+    var isNight: Bool
+    var startTime: Date
+    var endTime: Date
     var body: some View {
         VStack {
             HStack(alignment: .center) {
@@ -20,16 +23,22 @@ struct SleepCardView: View {
             Divider()
             HStack {
                 VStack {
-                    Text("22:12")
+                    Text("\(endTime.formatted(date: .omitted, time: .shortened))")
                     Spacer()
                     HStack {
                         Divider()
                     }
                     HStack{
                         Spacer()
-                        Image(systemName: "questionmark.app")
-                            .resizable()
-                            .frame(width: 32.0, height: 32.0)
+                        if isNight {
+                            Image(systemName: "moon.stars")
+                                .resizable()
+                                .frame(width: 32.0, height: 32.0)
+                        } else {
+                            Image(systemName: "sun.max")
+                                .resizable()
+                                .frame(width: 32.0, height: 32.0)
+                        }
                         Spacer()
                     }
                     .frame(width: 32.0, height: 32.0)
@@ -37,11 +46,15 @@ struct SleepCardView: View {
                     HStack {
                         Divider()
                     }
-                    Text("13:00")
+                    Text("\(startTime.formatted(date: .omitted, time: .shortened))")
                 }
                 VStack(alignment: .leading) {
                     Spacer()
-                    Text("Day sleep:")
+                    if isNight {
+                        Text("Night sleep:")
+                    } else {
+                        Text("Day sleep:")
+                    }
                     Text("5 hours 59 minutes").bold()
                     Spacer()
                 }
@@ -54,7 +67,7 @@ struct SleepCardView: View {
 
 struct SleepCardView_Previews: PreviewProvider {
     static var previews: some View {
-        SleepCardView()
+        SleepCardView(isNight: true, startTime: .now, endTime: .now)
             .background(Color("spring"))
             .previewLayout(.fixed(width: 400, height: 150))
             .environmentObject(RealmManager())

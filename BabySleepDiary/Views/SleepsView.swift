@@ -18,7 +18,7 @@ struct SleepsView: View {
             Spacer()
             List {
                 ForEach(realmManager.sleeps, id: \.id) { sleep in
-                    SleepCardView()
+                    SleepCardView(isNight: sleep.isNight, startTime: sleep.startTime ?? .now, endTime: sleep.endTime ?? .now)
                 }
             }
             SleepFooterView()
@@ -33,6 +33,7 @@ struct SleepLogView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             SleepsView()
+                .environmentObject(RealmManager())
         }
     }
 }
