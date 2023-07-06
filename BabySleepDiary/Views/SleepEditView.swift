@@ -38,7 +38,7 @@ struct SleepEditView: View {
                 HStack {
                     Text("Duration:")
                     Spacer()
-                    Text(calculateDuration())
+                    Text(Sleep().calculateDuration(startTime: startTime, endTime: endTime))
                         .bold()
                 }
                 HStack {
@@ -60,7 +60,7 @@ struct SleepEditView: View {
 
 struct SleepEditView_Previews: PreviewProvider {
     static var previews: some View {
-        SleepEditView(isNight: .constant(true), startTime: .constant(Date()), endTime: .constant(Date().addingTimeInterval(3600))) // Example: 1-hour duration
+        SleepEditView(isNight: .constant(true), startTime: .constant(Date()), endTime: .constant(Date().addingTimeInterval(3700))) // Example: 1-hour duration
             .environmentObject(RealmManager())
     }
 }

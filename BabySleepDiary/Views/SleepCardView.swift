@@ -16,7 +16,7 @@ struct SleepCardView: View {
         VStack {
             HStack(alignment: .center) {
                 Spacer()
-                Label("5 hours 59 minutes", systemImage: "clock.arrow.circlepath")
+                Label("5 hours 50 minutes", systemImage: "clock.arrow.circlepath")
                     .labelStyle(.titleAndIcon)
                     .font(.footnote).bold()
             }
@@ -55,7 +55,7 @@ struct SleepCardView: View {
                     } else {
                         Text("Day sleep:")
                     }
-                    Text("5 hours 59 minutes").bold()
+                    Text("\(Sleep().calculateDuration(startTime: startTime, endTime: endTime))").bold()
                     Spacer()
                 }
                 Spacer()
@@ -67,7 +67,7 @@ struct SleepCardView: View {
 
 struct SleepCardView_Previews: PreviewProvider {
     static var previews: some View {
-        SleepCardView(isNight: true, startTime: .now, endTime: .now)
+        SleepCardView(isNight: true, startTime: .now, endTime: .now.addingTimeInterval(3900))
             .background(Color("spring"))
             .previewLayout(.fixed(width: 400, height: 150))
             .environmentObject(RealmManager())
