@@ -18,7 +18,17 @@ struct SleepsView: View {
             Spacer()
             List {
                 ForEach(realmManager.sleeps, id: \.id) { sleep in
-                    SleepCardView(isNight: sleep.isNight, startTime: sleep.startTime ?? .now, endTime: sleep.endTime ?? .now)
+                    if !sleep.isInvalidated {
+                        SleepCardView(isNight: sleep.isNight, startTime: sleep.startTime ?? .now, endTime: sleep.endTime ?? .now)
+                            .swipeActions(edge: .trailing) {
+                                Button(role: .destructive) {
+                                    realmManager.deleteSleep(id: sleep.id)
+                                } label: {
+                                    Label("Delete", systemImage: "trash")
+
+                                }
+                            }
+                    }
                 }
             }
             SleepFooterView()
