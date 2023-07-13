@@ -26,16 +26,6 @@ struct SleepEditView: View {
         Form {
             Section(header: Text("Add or edit the sleep")) {
                 HStack {
-                    Text("Start time: ")
-                    Spacer()
-                    DoubleDatePickerView(selectedDate: $startTime)
-                }
-                HStack {
-                    Text("End time: ")
-                    Spacer()
-                    DoubleDatePickerView(selectedDate: $endTime)
-                }
-                HStack {
                     Text("Duration:")
                     Spacer()
                     Text(Sleep().calculateDuration(startTime: startTime, endTime: endTime))
@@ -52,6 +42,16 @@ struct SleepEditView: View {
                         }
                     }
                     .toggleStyle(.button)
+                }
+                HStack {
+                    Text("Start time: ")
+                    Spacer()
+                    DoubleDatePickerView(selectedDate: $startTime)
+                }
+                HStack {
+                    Text("End time: ")
+                    Spacer()
+                    DoubleDatePickerView(selectedDate: $endTime)
                 }
             }
         }
