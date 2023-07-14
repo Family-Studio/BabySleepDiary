@@ -20,17 +20,17 @@ struct SleepDetailView: View {
                 HStack {
                     Label("Start time", systemImage: "play")
                     Spacer()
-                    Text("22:08")
+                    Text("\(startTime.formatted())")
                 }
                 HStack {
                     Label("End time", systemImage: "stop")
                     Spacer()
-                    Text("22:08")
+                    Text("\(endTime.formatted())")
                 }
                 HStack {
                     Label("Duration", systemImage: "alarm")
                     Spacer()
-                    Text("5 hours 59 minutes")
+                    Text("\(Sleep().calculateDuration(startTime: startTime, endTime: endTime))")
                 }
             }
             Section(header: Label("Actions", systemImage: "slider.horizontal.3")) {
@@ -68,7 +68,7 @@ struct SleepDetailView: View {
 struct SleepDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            SleepDetailView(isNight: .constant(true), startTime: .constant(.now), endTime: .constant(.now))
+            SleepDetailView(isNight: .constant(true), startTime: .constant(.now), endTime: .constant(.now.addingTimeInterval(3800)))
                 .environmentObject(RealmManager())
         }
     }
