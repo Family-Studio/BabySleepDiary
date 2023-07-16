@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct SleepsView: View {
-    @StateObject var realmManager = RealmManager()
-    @Environment(\.scenePhase) private var scenePhase
-    
+    @StateObject var realmManager = RealmManager()    
     
     var body: some View {
         NavigationStack {
