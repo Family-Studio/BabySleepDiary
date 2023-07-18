@@ -26,25 +26,27 @@ struct SleepCardView: View {
                     Text("\(endTime.formatted(date: .omitted, time: .shortened))")
                     Spacer()
                     HStack {
-                        Divider()
                     }
                     HStack{
                         Spacer()
                         if isNight {
                             Image(systemName: "moon.stars")
                                 .resizable()
+                                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                                 .frame(width: 32.0, height: 32.0)
+                                .background(Color(.accentColorGreen))
                         } else {
                             Image(systemName: "sun.max")
                                 .resizable()
                                 .frame(width: 32.0, height: 32.0)
+                                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                                .background(Color(.accentColorYellow))
                         }
                         Spacer()
                     }
                     .frame(width: 32.0, height: 32.0)
                     Spacer()
                     HStack {
-                        Divider()
                     }
                     Text("\(startTime.formatted(date: .omitted, time: .shortened))")
                 }
@@ -61,14 +63,16 @@ struct SleepCardView: View {
                 Spacer()
             }
         }
-        .padding(2)
+        .padding(4)
+        .background(Color("secondaryBackgroundColor"))
+        .cornerRadius(12.0)
     }
 }
 
 struct SleepCardView_Previews: PreviewProvider {
     static var previews: some View {
         SleepCardView(isNight: true, startTime: .now, endTime: .now.addingTimeInterval(3900))
-            .background(Color("spring"))
+            .background(Color(.secondaryBackground))
             .previewLayout(.fixed(width: 400, height: 150))
             .environmentObject(RealmManager())
     }

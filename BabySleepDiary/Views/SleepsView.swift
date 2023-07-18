@@ -30,14 +30,18 @@ struct SleepsView: View {
                                         }
                                     }
                             }
+                            .background(Color(.secondarySystemBackground))
+                            .cornerRadius(12)
+                            .listRowSeparator(.hidden)
                         }
                     }
                 }
+                .listStyle(PlainListStyle())
                 SleepFooterView()
                     .environmentObject(realmManager)
             }
-            .background(.white)
-        .scrollContentBackground(.hidden)
+            .background(Color(.primaryBackground))
+            .scrollContentBackground(.hidden)
         }
     }
 }
