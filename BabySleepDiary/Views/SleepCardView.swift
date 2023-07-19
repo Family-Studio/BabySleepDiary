@@ -14,13 +14,6 @@ struct SleepCardView: View {
     var endTime: Date
     var body: some View {
         VStack {
-            HStack(alignment: .center) {
-                Spacer()
-                Label("5 hours 50 minutes", systemImage: "clock.arrow.circlepath")
-                    .labelStyle(.titleAndIcon)
-                    .font(.footnote).bold()
-            }
-            Divider()
             HStack {
                 VStack {
                     Text("\(endTime.formatted(date: .omitted, time: .shortened))")
@@ -30,17 +23,29 @@ struct SleepCardView: View {
                     HStack{
                         Spacer()
                         if isNight {
-                            Image(systemName: "moon.stars")
-                                .resizable()
-                                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                                .frame(width: 32.0, height: 32.0)
-                                .background(Color(.accentColorGreen))
+                            ZStack {
+                                Circle()
+                                    .foregroundColor(Color(.accentColorGreen)) // Change the color to your preference
+                                
+                                Image(systemName: "moon.stars")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 28, height: 28) // Adjust the size of the image
+                                    .foregroundColor(.white) // Change the color of the system image
+                            }
+                            .frame(width: 44, height: 44) // Adjust the overall size of the circle
                         } else {
-                            Image(systemName: "sun.max")
-                                .resizable()
-                                .frame(width: 32.0, height: 32.0)
-                                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                                .background(Color(.accentColorYellow))
+                            ZStack {
+                                Circle()
+                                    .foregroundColor(Color(.accentColorYellow)) // Change the color to your preference
+                                
+                                Image(systemName: "sun.max")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 28, height: 28) // Adjust the size of the image
+                                    .foregroundColor(.white) // Change the color of the system image
+                            }
+                            .frame(width: 44, height: 44) // Adjust the overall size of the circle
                         }
                         Spacer()
                     }
@@ -50,6 +55,7 @@ struct SleepCardView: View {
                     }
                     Text("\(startTime.formatted(date: .omitted, time: .shortened))")
                 }
+                .padding(4)
                 VStack(alignment: .leading) {
                     Spacer()
                     if isNight {
@@ -63,9 +69,9 @@ struct SleepCardView: View {
                 Spacer()
             }
         }
-        .padding(4)
-        .background(Color("secondaryBackgroundColor"))
+        .padding(12)
         .cornerRadius(12.0)
+        .background(Color(.systemBackground))
     }
 }
 

@@ -19,6 +19,14 @@ struct SleepsView: View {
                 List {
                     ForEach(realmManager.sleeps, id: \.id) { sleep in
                         if !sleep.isInvalidated {
+                            HStack() {
+                                Spacer()
+                                Label("5 hours 50 minutes", systemImage: "clock.arrow.circlepath")
+                                    .labelStyle(.titleAndIcon)
+                                    .font(.footnote).bold()
+                                    .foregroundStyle(Color(.secondaryLabel))
+                            }
+                            .listRowBackground(Color.clear)
                             NavigationLink(destination: SleepFooterView()) {
                                 SleepCardView(isNight: sleep.isNight, startTime: sleep.startTime ?? .now, endTime: sleep.endTime ?? .now)
                                     .swipeActions(edge: .trailing) {
@@ -30,9 +38,10 @@ struct SleepsView: View {
                                         }
                                     }
                             }
-                            .background(Color(.secondarySystemBackground))
-                            .cornerRadius(12)
+                            .listRowBackground(Color.clear)
                             .listRowSeparator(.hidden)
+                            .background(Color(.systemBackground))
+                            .cornerRadius(12)
                         }
                     }
                 }
@@ -40,8 +49,8 @@ struct SleepsView: View {
                 SleepFooterView()
                     .environmentObject(realmManager)
             }
-            .background(Color(.primaryBackground))
             .scrollContentBackground(.hidden)
+            .background(Color(.secondarySystemBackground))
         }
     }
 }
