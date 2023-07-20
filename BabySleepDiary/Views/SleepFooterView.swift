@@ -14,16 +14,35 @@ struct SleepFooterView: View {
     var body: some View {
         HStack {
             Button(action: {isPresentingNewSleepView = true}) {
-                Label("Add", systemImage: "plus")
+                ZStack {
+                    Circle()
+                        .foregroundColor(Color(.primaryBackground))
+                    Image(systemName: "plus.circle")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 44, height: 44)
+                        .foregroundColor(Color(.primaryLabel))
+                }
+                .frame(width: 44, height: 44)
+                .padding(24.0)
             }
             .padding(24.0)
             Spacer()
             Button(action: {}) {
-                Label("Start", systemImage: "play")
+                ZStack {
+                    Circle()
+                        .foregroundColor(Color(.primaryBackground))
+                    Image(systemName: "play.circle")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 44, height: 44)
+                        .foregroundColor(Color(.primaryLabel))
+                }
+                .frame(width: 44, height: 44)
+                .padding(24.0)
             }
             .padding(24.0)
         }
-        .padding(0)
         .sheet(isPresented: $isPresentingNewSleepView) {
             NewSleepSheet(realmManager: _realmManager, isPresentingNewSleepView: $isPresentingNewSleepView)
         }
@@ -33,6 +52,7 @@ struct SleepFooterView: View {
 struct DailySleepFooterView_Previews: PreviewProvider {
     static var previews: some View {
         SleepFooterView()
+            .background(Color(.secondaryBackground))
             .environmentObject(RealmManager())
     }
 }
