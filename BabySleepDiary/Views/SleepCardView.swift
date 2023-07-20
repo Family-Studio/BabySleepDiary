@@ -41,7 +41,7 @@ struct SleepCardView: View {
                 .padding(4)
                 VStack(alignment: .leading) {
                     Spacer()
-                        Text(isNight ? "Night sleep:" : "Day sleep:")
+                    Text(isNight ? "Night sleep:" : "Day sleep:")
                     Text("\(Sleep().calculateDuration(startTime: startTime, endTime: endTime))").bold()
                     Spacer()
                 }

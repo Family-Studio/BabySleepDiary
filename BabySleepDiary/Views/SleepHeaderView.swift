@@ -19,27 +19,45 @@ struct SleepHeaderView: View {
         VStack {
             HStack() {
                 Button(action: {}) {
-                    Label("", systemImage: "arrow.left")
+                    ZStack {
+                        Circle()
+                            .foregroundColor(Color(.primaryBackground))
+                        Image(systemName: "arrow.left")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 28, height: 28)
+                            .foregroundColor(Color(.primaryLabel))
+                    }
+                    .frame(width: 44, height: 44)
+                    .padding(16.0)
                 }
-                .padding(16.0)
                 Spacer()
                 DatePicker("", selection: $selectedDate, in: closedRange, displayedComponents: .date)
                     .labelsHidden()
                     .frame(alignment: .center)
                 Spacer()
                 Button(action: {}) {
-                    Label("", systemImage: "arrow.right")
+                    ZStack {
+                        Circle()
+                            .foregroundColor(Color(.primaryBackground))
+                        Image(systemName: "arrow.right")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 28, height: 28)
+                            .foregroundColor(Color(.primaryLabel))
+                    }
+                    .frame(width: 44, height: 44)
+                    .padding(16.0)
                 }
-                .padding(16.0)
             }
         }
-        .padding(0)
     }
 }
 
 struct DailySleepHeaderView_Previews: PreviewProvider {
     static var previews: some View {
         SleepHeaderView()
+            .background(Color(.secondarySystemBackground))
             .environmentObject(RealmManager())
     }
 }
