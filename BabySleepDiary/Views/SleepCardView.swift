@@ -22,47 +22,26 @@ struct SleepCardView: View {
                     }
                     HStack{
                         Spacer()
-                        if isNight {
-                            ZStack {
-                                Circle()
-                                    .foregroundColor(Color(.accentColorGreen)) // Change the color to your preference
-                                
-                                Image(systemName: "moon.stars")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 28, height: 28) // Adjust the size of the image
-                                    .foregroundColor(.white) // Change the color of the system image
-                            }
-                            .frame(width: 44, height: 44) // Adjust the overall size of the circle
-                        } else {
-                            ZStack {
-                                Circle()
-                                    .foregroundColor(Color(.accentColorYellow)) // Change the color to your preference
-                                
-                                Image(systemName: "sun.max")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 28, height: 28) // Adjust the size of the image
-                                    .foregroundColor(.white) // Change the color of the system image
-                            }
-                            .frame(width: 44, height: 44) // Adjust the overall size of the circle
+                        ZStack {
+                            Circle()
+                                .foregroundColor(isNight ? Color(.accentColorGreen) : Color(.accentColorYellow))
+                            Image(systemName: isNight ? "moon.stars" : "sun.max")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 28, height: 28) // Adjust the size of the image
+                                .foregroundColor(.white) // Change the color of the system image
                         }
+                        .frame(width: 44, height: 44) // Adjust the overall size of the circle
                         Spacer()
                     }
                     .frame(width: 32.0, height: 32.0)
                     Spacer()
-                    HStack {
-                    }
                     Text("\(startTime.formatted(date: .omitted, time: .shortened))")
                 }
                 .padding(4)
                 VStack(alignment: .leading) {
                     Spacer()
-                    if isNight {
-                        Text("Night sleep:")
-                    } else {
-                        Text("Day sleep:")
-                    }
+                        Text(isNight ? "Night sleep:" : "Day sleep:")
                     Text("\(Sleep().calculateDuration(startTime: startTime, endTime: endTime))").bold()
                     Spacer()
                 }
