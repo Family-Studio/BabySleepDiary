@@ -21,12 +21,12 @@ struct SleepHeaderView: View {
                 Button(action: {}) {
                     ZStack {
                         Circle()
-                            .foregroundColor(Color(.primaryBackground))
+                            .foregroundColor(Color("primaryBackgroundColor"))
                         Image(systemName: "arrow.left")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 28, height: 28)
-                            .foregroundColor(Color(.primaryLabel))
+                            .foregroundColor(Color("primaryLabelColor"))
                     }
                     .frame(width: 44, height: 44)
                     .padding(16.0)
@@ -39,12 +39,12 @@ struct SleepHeaderView: View {
                 Button(action: {}) {
                     ZStack {
                         Circle()
-                            .foregroundColor(Color(.primaryBackground))
+                            .foregroundColor(Color("primaryBackgroundColor"))
                         Image(systemName: "arrow.right")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 28, height: 28)
-                            .foregroundColor(Color(.primaryLabel))
+                            .foregroundColor(Color("primaryLabelColor"))
                     }
                     .frame(width: 44, height: 44)
                     .padding(16.0)

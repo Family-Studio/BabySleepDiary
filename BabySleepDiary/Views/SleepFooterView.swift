@@ -16,12 +16,12 @@ struct SleepFooterView: View {
             Button(action: {isPresentingNewSleepView = true}) {
                 ZStack {
                     Circle()
-                        .foregroundColor(Color(.primaryBackground))
+                        .foregroundColor(Color("primaryBackgroundColor"))
                     Image(systemName: "plus.circle")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 44, height: 44)
-                        .foregroundColor(Color(.primaryLabel))
+                        .foregroundColor(Color("primaryLabelColor"))
                 }
                 .frame(width: 44, height: 44)
                 .padding(24.0)
@@ -31,12 +31,12 @@ struct SleepFooterView: View {
             Button(action: {}) {
                 ZStack {
                     Circle()
-                        .foregroundColor(Color(.primaryBackground))
+                        .foregroundColor(Color("primaryBackgroundColor"))
                     Image(systemName: "play.circle")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 44, height: 44)
-                        .foregroundColor(Color(.primaryLabel))
+                        .foregroundColor(Color("primaryLabelColor"))
                 }
                 .frame(width: 44, height: 44)
                 .padding(24.0)
@@ -52,7 +52,7 @@ struct SleepFooterView: View {
 struct DailySleepFooterView_Previews: PreviewProvider {
     static var previews: some View {
         SleepFooterView()
-            .background(Color(.secondaryBackground))
+            .background(Color("secondaryBackgroundColor"))
             .environmentObject(RealmManager())
     }
 }

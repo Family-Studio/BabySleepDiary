@@ -24,7 +24,7 @@ struct SleepCardView: View {
                         Spacer()
                         ZStack {
                             Circle()
-                                .foregroundColor(isNight ? Color(.accentColorGreen) : Color(.accentColorYellow))
+                                .foregroundColor(isNight ? Color("accentColorGreen") : Color("accentColorYellow"))
                             Image(systemName: isNight ? "moon.stars" : "sun.max")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
@@ -57,7 +57,7 @@ struct SleepCardView: View {
 struct SleepCardView_Previews: PreviewProvider {
     static var previews: some View {
         SleepCardView(isNight: true, startTime: .now, endTime: .now.addingTimeInterval(3900))
-            .background(Color(.secondaryBackground))
+            .background(Color("secondaryBackgroundColor"))
             .previewLayout(.fixed(width: 400, height: 150))
             .environmentObject(RealmManager())
     }
