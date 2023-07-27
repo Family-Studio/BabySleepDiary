@@ -13,54 +13,39 @@ struct SleepEditView: View {
     @Binding var startTime: Date
     @Binding var endTime: Date
     
-    private func calculateDuration() -> String {
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([.hour, .minute], from: startTime, to: endTime)
-        let hours = components.hour ?? 0
-        let minutes = components.minute ?? 0
-        
-        return "\(hours) hours \(minutes) minutes"
-    }
-    
     var body: some View {
         Form {
-            Section(header: Text("Add or edit the sleep")) {
-                HStack {
-                    Text("Duration:")
-                    Spacer()
-                    Text(Sleep().calculateDuration(startTime: startTime, endTime: endTime))
-                        .bold()
-                }
+            Section(header: Text("Edit the sleep")) {
                 HStack {
                     Text("Sleep period:")
                     Spacer()
                     Toggle(isOn: $isNight) {
-                        if isNight {
-                            Label("Night", systemImage: "moon.stars")
-                        } else {
-                            Label("Day", systemImage: "sun.max")
-                        }
+                        Label((isNight ? "Night" : "Day"), systemImage: (isNight ? "moon.stars" : "sun.max"))
                     }
                     .toggleStyle(.button)
                 }
                 HStack {
-                    Text("Start time: ")
+                    Text("Start time:")
                     Spacer()
                     DoubleDatePickerView(selectedDate: $startTime)
                 }
                 HStack {
-                    Text("End time: ")
+                    Text("End time:")
                     Spacer()
                     DoubleDatePickerView(selectedDate: $endTime)
                 }
             }
+            Section(header: Text("Preview")) {
+                SleepCardView(isNight: isNight, startTime: startTime, endTime: endTime)
+            }
         }
+        .background(Color("secondaryBackgroundColor"))
     }
 }
 
 struct SleepEditView_Previews: PreviewProvider {
     static var previews: some View {
-        SleepEditView(isNight: .constant(true), startTime: .constant(Date()), endTime: .constant(Date().addingTimeInterval(3700))) // Example: 1-hour duration
+        SleepEditView(isNight: .constant(true), startTime: .constant(Date()), endTime: .constant(Date().addingTimeInterval(3700)))
             .environmentObject(RealmManager())
     }
 }
