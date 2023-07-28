@@ -6,48 +6,41 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct SleepsView: View {
-    @StateObject var realmManager = RealmManager()    
+    @StateObject var realmManager = RealmManager()
+    @ObservedResults(Sleep.self) var sleeps
     
     var body: some View {
         NavigationStack {
             VStack() {
                 SleepHeaderView()
-                    .environmentObject(realmManager)
+                Spacer()
+                if sleeps.isEmpty {
+                    Text("No sleeps")
+                }
                 Spacer()
                 List {
-                    ForEach(realmManager.sleeps, id: \.id) { sleep in
-                        if !sleep.isInvalidated {
-                            HStack() {
-                                Spacer()
-                                Label("5 hours 50 minutes", systemImage: "clock.arrow.circlepath")
-                                    .labelStyle(.titleAndIcon)
-                                    .font(.footnote).bold()
-                                    .foregroundStyle(Color(.secondaryLabel))
-                            }
-                            .listRowBackground(Color.clear)
-                            NavigationLink(destination: SleepFooterView()) {
-                                SleepCardView(isNight: sleep.isNight, startTime: sleep.startTime ?? .now, endTime: sleep.endTime ?? .now)
-                                    .swipeActions(edge: .trailing) {
-                                        Button(role: .destructive) {
-                                            realmManager.deleteSleep(id: sleep.id)
-                                        } label: {
-                                            Label("Delete", systemImage: "trash")
-
-                                        }
+                    ForEach(sleeps, id: \.id) { sleep in
+                        NavigationLink(destination: SleepFooterView()) {
+                            SleepCardView(isNight: sleep.isNight, startTime: sleep.startTime ?? .now, endTime: sleep.endTime ?? .now)
+                                .swipeActions(edge: .trailing) {
+                                    Button(role: .destructive) {
+                                        $sleeps.remove(sleep)
+                                    } label: {
+                                        Label("Delete", systemImage: "trash")
                                     }
-                            }
-                            .listRowBackground(Color.clear)
-                            .listRowSeparator(.hidden)
-                            .background(Color(.systemBackground))
-                            .cornerRadius(12)
+                                }
                         }
                     }
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
+                    .background(Color(.systemBackground))
+                    .cornerRadius(12)
                 }
                 .listStyle(PlainListStyle())
                 SleepFooterView()
-                    .environmentObject(realmManager)
             }
             .scrollContentBackground(.hidden)
             .background(Color(.secondarySystemBackground))
@@ -59,7 +52,7 @@ struct SleepLogView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             SleepsView()
-                .environmentObject(RealmManager())
+ //               .environmentObject(RealmManager())
         }
     }
 }
