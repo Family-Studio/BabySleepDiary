@@ -13,6 +13,8 @@ struct BabySleepDiaryApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
+                let _ = UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+                let _ = print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.path(percentEncoded: true))
                 SleepsView()
             }
         }
