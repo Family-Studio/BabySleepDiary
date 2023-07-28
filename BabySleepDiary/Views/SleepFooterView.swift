@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SleepFooterView: View {
-    @EnvironmentObject var realmManager: RealmManager
     @State private var isPresentingNewSleepView = false
     
     var body: some View {
@@ -44,7 +43,7 @@ struct SleepFooterView: View {
             .padding(24.0)
         }
         .sheet(isPresented: $isPresentingNewSleepView) {
-            NewSleepSheet(realmManager: _realmManager, isPresentingNewSleepView: $isPresentingNewSleepView)
+            NewSleepSheet(isPresentingNewSleepView: $isPresentingNewSleepView)
         }
     }
 }
@@ -53,6 +52,5 @@ struct DailySleepFooterView_Previews: PreviewProvider {
     static var previews: some View {
         SleepFooterView()
             .background(Color("secondaryBackgroundColor"))
-            .environmentObject(RealmManager())
     }
 }
