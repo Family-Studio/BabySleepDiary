@@ -11,39 +11,42 @@ struct SleepFooterView: View {
     @State private var isPresentingNewSleepView = false
     
     var body: some View {
-        HStack {
-            Button(action: {isPresentingNewSleepView = true}) {
-                ZStack {
-                    Circle()
-                        .foregroundColor(Color("primaryBackgroundColor"))
-                    Image(systemName: "plus.circle")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 44, height: 44)
-                        .foregroundColor(Color("primaryLabelColor"))
-                }
-                .frame(width: 44, height: 44)
-                .padding(24.0)
-            }
-            .padding(24.0)
+        VStack {
             Spacer()
-            Button(action: {}) {
-                ZStack {
-                    Circle()
-                        .foregroundColor(Color("primaryBackgroundColor"))
-                    Image(systemName: "play.circle")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 44, height: 44)
-                        .foregroundColor(Color("primaryLabelColor"))
+            HStack {
+                Button(action: {isPresentingNewSleepView = true}) {
+                    ZStack {
+                        Circle()
+                            .foregroundColor(Color("primaryBackgroundColor"))
+                        Image(systemName: "plus.circle")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 44, height: 44)
+                            .foregroundColor(Color("primaryLabelColor"))
+                    }
+                    .frame(width: 44, height: 44)
+                    .padding(24.0)
                 }
-                .frame(width: 44, height: 44)
+                .padding(24.0)
+                Spacer()
+                Button(action: {}) {
+                    ZStack {
+                        Circle()
+                            .foregroundColor(Color("primaryBackgroundColor"))
+                        Image(systemName: "play.circle")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 44, height: 44)
+                            .foregroundColor(Color("primaryLabelColor"))
+                    }
+                    .frame(width: 44, height: 44)
+                    .padding(24.0)
+                }
                 .padding(24.0)
             }
-            .padding(24.0)
+            .sheet(isPresented: $isPresentingNewSleepView) {
+                NewSleepSheet(isPresentingNewSleepView: $isPresentingNewSleepView)
         }
-        .sheet(isPresented: $isPresentingNewSleepView) {
-            NewSleepSheet(isPresentingNewSleepView: $isPresentingNewSleepView)
         }
     }
 }

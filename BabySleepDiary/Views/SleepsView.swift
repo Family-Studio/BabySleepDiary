@@ -40,7 +40,7 @@ struct SleepsView: View {
                     .cornerRadius(12)
                 }
                 .listStyle(PlainListStyle())
-                SleepFooterView()
+                .overlay(SleepFooterView())
             }
             .scrollContentBackground(.hidden)
             .background(Color(.secondarySystemBackground))
@@ -52,7 +52,6 @@ struct SleepLogView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             SleepsView()
- //               .environmentObject(RealmManager())
         }
     }
 }
