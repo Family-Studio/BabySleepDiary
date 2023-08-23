@@ -15,10 +15,16 @@ struct SleepHeaderView: View {
         let monthAgo = Calendar.current.date(byAdding: .day, value: -30, to: Date())!
         return monthAgo...currentDate
     }
+    func addOneDayToDate() {
+        let calendar = Calendar.current
+        if let newDate = calendar.date(byAdding: .day, value: 1, to: selectedDate) {
+            selectedDate = newDate
+        }
+    }
     var body: some View {
         VStack {
             HStack() {
-                Button(action: {}) {
+                Button(action: { navigateDate(by: -1) }) {
                     ZStack {
                         Circle()
                             .foregroundColor(Color("primaryBackgroundColor"))
@@ -36,7 +42,7 @@ struct SleepHeaderView: View {
                     .labelsHidden()
                     .frame(alignment: .center)
                 Spacer()
-                Button(action: {}) {
+                Button(action: { self.navigateDate(by: 1) }) {
                     ZStack {
                         Circle()
                             .foregroundColor(Color("primaryBackgroundColor"))
@@ -50,6 +56,13 @@ struct SleepHeaderView: View {
                     .padding(16.0)
                 }
             }
+        }
+    }
+
+    func navigateDate(by days: Int) {
+        let calendar = Calendar.current
+        if let newDate = calendar.date(byAdding: .day, value: days, to: selectedDate) {
+            selectedDate = newDate
         }
     }
 }
